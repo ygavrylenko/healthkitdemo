@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>remoteAccessConsumerKey</key>
+	<string>3MVG9JEx.BE6yifNhhSQ97O5hWWqvc3HbiEpQakw3e2ZeS3iBI1Dz4BmDwdoMi.v0UgW0cc2ZCO.Z1i1c9gYI</string>
+	<key>oauthRedirectURI</key>
+	<string>patientapp://auth/success</string>
+	<key>oauthScopes</key>
+	<array>
+		<string>offline_access</string>
+		<string>refresh_token</string>
+		<string>api</string>
+	</array>
+	<key>shouldAuthenticate</key>
+	<true/>
+</dict>
+</plist>
