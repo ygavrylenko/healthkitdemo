@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct HealthMeasurementRow: View {
-    var measurement: ForcedVitalCapacity
+    var measurement: HealthKitMeasurement
         
     var body: some View {
         VStack {
@@ -36,6 +36,6 @@ struct HealthMeasurementRow: View {
 
 struct HealthMeasurementRow_Previews: PreviewProvider {
     static var previews: some View {
-        HealthMeasurementRow(measurement: ForcedVitalCapacity(id: "1234567890", quantityString: "4.55", quantityDouble: 4.55, date: Date(), dateString: "16-07-2020", deviceName: "NuvoAir"))
+        HealthMeasurementRow(measurement: HealthKitMeasurement(id: "1234567890", quantityString: "4.55", quantityDouble: 4.55, date: Date(), dateString: "16-07-2020", deviceName: "NuvoAir"))
     }
 }

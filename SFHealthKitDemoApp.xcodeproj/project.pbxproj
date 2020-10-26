@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15FDC5F925573FFA936EC92C /* Pods_SFHealthKitDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6ACA68403AC6C9D35D53E55 /* Pods_SFHealthKitDemoApp.framework */; };
 		4F13E93C237DD5D9005BCAE9 /* ContactsForAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F13E937237DD5D9005BCAE9 /* ContactsForAccountModel.swift */; };
 		4F13E93F237DD5D9005BCAE9 /* ContactDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F13E93A237DD5D9005BCAE9 /* ContactDetailModel.swift */; };
 		4F13E942237DD5EE005BCAE9 /* usersyncs.json in Resources */ = {isa = PBXBuildFile; fileRef = 4F13E940237DD5EE005BCAE9 /* usersyncs.json */; };
@@ -15,7 +16,6 @@
 		4F393A291C3C8BCD00B3EA13 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F393A281C3C8BCD00B3EA13 /* main.swift */; };
 		4FD6C47A1B754AF1002F9F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD6C4791B754AF1002F9F90 /* AppDelegate.swift */; };
 		4FD6C4A01B755242002F9F90 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD6C49D1B755242002F9F90 /* InitialViewController.swift */; };
-		78A235BD93AB7D080D67CD51 /* Pods_IPFPatientApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A29C75280BDF73123F14B4 /* Pods_IPFPatientApp.framework */; };
 		B7168FBC1FACC6F900A48DB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7168FBB1FACC6F900A48DB5 /* LaunchScreen.storyboard */; };
 		B73B520D234FA65F001B069B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73B520C234FA65F001B069B /* SceneDelegate.swift */; };
 		B77BD8A321125B510036B284 /* bootconfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = B77BD8A221125B510036B284 /* bootconfig.plist */; };
@@ -29,6 +29,14 @@
 		E556DF8624B4B7F0005D0DDF /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E556DF8524B4B7F0005D0DDF /* ViewRouter.swift */; };
 		E556DF8824B4B9E1005D0DDF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E556DF8724B4B9E1005D0DDF /* HealthKit.framework */; };
 		E556DF9024B4C515005D0DDF /* UserHealthProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E556DF8F24B4C515005D0DDF /* UserHealthProfile.swift */; };
+		E5810061254722D2005A2696 /* ContentMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5810060254722D2005A2696 /* ContentMessageView.swift */; };
+		E58100632547238B005A2696 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58100622547238B005A2696 /* MessageView.swift */; };
+		E5810066254724A7005A2696 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5810065254724A7005A2696 /* Message.swift */; };
+		E5810068254724C6005A2696 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5810067254724C6005A2696 /* User.swift */; };
+		E581006A254725C5005A2696 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5810069254725C5005A2696 /* ChatView.swift */; };
+		E581006D25472614005A2696 /* ChatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E581006C25472614005A2696 /* ChatHelper.swift */; };
+		E581006F25472628005A2696 /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E581006E25472628005A2696 /* KeyboardResponder.swift */; };
+		E58100712547263E005A2696 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58100702547263E005A2696 /* ViewExtension.swift */; };
 		E5A2A9F424C02DEE00DB959A /* HealthDataTypeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A2A9F324C02DEE00DB959A /* HealthDataTypeRow.swift */; };
 		E5A2A9F924C03FA700DB959A /* MainHKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A2A9F824C03FA700DB959A /* MainHKView.swift */; };
 		E5A2A9FB24C04E7500DB959A /* HealthDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A2A9FA24C04E7500DB959A /* HealthDataModel.swift */; };
@@ -40,20 +48,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		045D1C5BC2F1EADFDFB3671E /* Pods-IPFPatientApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPFPatientApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-IPFPatientApp/Pods-IPFPatientApp.release.xcconfig"; sourceTree = "<group>"; };
+		45548CCBD204A8C159977B91 /* Pods-SFHealthKitDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SFHealthKitDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-SFHealthKitDemoApp/Pods-SFHealthKitDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		4F13E937237DD5D9005BCAE9 /* ContactsForAccountModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsForAccountModel.swift; sourceTree = "<group>"; };
 		4F13E93A237DD5D9005BCAE9 /* ContactDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailModel.swift; sourceTree = "<group>"; };
 		4F13E940237DD5EE005BCAE9 /* usersyncs.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = usersyncs.json; sourceTree = "<group>"; };
 		4F13E941237DD5EE005BCAE9 /* userstore.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = userstore.json; sourceTree = "<group>"; };
 		4F13E946237DD72E005BCAE9 /* AccountsListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsListModel.swift; sourceTree = "<group>"; };
 		4F393A281C3C8BCD00B3EA13 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		4FD6C4741B754AF1002F9F90 /* IPFPatientApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IPFPatientApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FD6C4741B754AF1002F9F90 /* SFHealthKitDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFHealthKitDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FD6C4781B754AF1002F9F90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FD6C4791B754AF1002F9F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FD6C49D1B755242002F9F90 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
-		4FF12F8A1DCA91F5004D9EF9 /* IPFPatientApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IPFPatientApp.entitlements; sourceTree = "<group>"; };
-		762732C14CFE40A989C3AD70 /* Pods-IPFPatientApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IPFPatientApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IPFPatientApp/Pods-IPFPatientApp.debug.xcconfig"; sourceTree = "<group>"; };
-		82A29C75280BDF73123F14B4 /* Pods_IPFPatientApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IPFPatientApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FF12F8A1DCA91F5004D9EF9 /* SFHealthKitDemoApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SFHealthKitDemoApp.entitlements; sourceTree = "<group>"; };
 		B7168FBB1FACC6F900A48DB5 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "../mobile_sdk/SalesforceMobileSDK-iOS/shared/resources/LaunchScreen.storyboard"; sourceTree = "<group>"; };
 		B73B520C234FA65F001B069B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B77BD8A221125B510036B284 /* bootconfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bootconfig.plist; sourceTree = "<group>"; };
@@ -67,6 +73,14 @@
 		E556DF8524B4B7F0005D0DDF /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		E556DF8724B4B9E1005D0DDF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		E556DF8F24B4C515005D0DDF /* UserHealthProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHealthProfile.swift; sourceTree = "<group>"; };
+		E5810060254722D2005A2696 /* ContentMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMessageView.swift; sourceTree = "<group>"; };
+		E58100622547238B005A2696 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		E5810065254724A7005A2696 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		E5810067254724C6005A2696 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E5810069254725C5005A2696 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		E581006C25472614005A2696 /* ChatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHelper.swift; sourceTree = "<group>"; };
+		E581006E25472628005A2696 /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
+		E58100702547263E005A2696 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		E5A2A9F324C02DEE00DB959A /* HealthDataTypeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataTypeRow.swift; sourceTree = "<group>"; };
 		E5A2A9F824C03FA700DB959A /* MainHKView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHKView.swift; sourceTree = "<group>"; };
 		E5A2A9FA24C04E7500DB959A /* HealthDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataModel.swift; sourceTree = "<group>"; };
@@ -75,6 +89,8 @@
 		E5A2AA0324C1B5E800DB959A /* SyncHKDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncHKDataModel.swift; sourceTree = "<group>"; };
 		E5A2AA0624C1B91C00DB959A /* RestClientExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClientExtensions.swift; sourceTree = "<group>"; };
 		E5A2AA0824C1B97600DB959A /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		F32AF071172821B277B5930B /* Pods-SFHealthKitDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SFHealthKitDemoApp.release.xcconfig"; path = "Target Support Files/Pods-SFHealthKitDemoApp/Pods-SFHealthKitDemoApp.release.xcconfig"; sourceTree = "<group>"; };
+		F6ACA68403AC6C9D35D53E55 /* Pods_SFHealthKitDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SFHealthKitDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +98,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78A235BD93AB7D080D67CD51 /* Pods_IPFPatientApp.framework in Frameworks */,
 				E556DF8824B4B9E1005D0DDF /* HealthKit.framework in Frameworks */,
+				15FDC5F925573FFA936EC92C /* Pods_SFHealthKitDemoApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +109,7 @@
 		4F13E944237DD626005BCAE9 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				E581005F254722C1005A2696 /* ChatViews */,
 				B73B520C234FA65F001B069B /* SceneDelegate.swift */,
 				E556DF8324B4B76B005D0DDF /* TabMenuView.swift */,
 				E556DF8524B4B7F0005D0DDF /* ViewRouter.swift */,
@@ -110,6 +127,7 @@
 		4F13E945237DD62D005BCAE9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E58100642547249A005A2696 /* ChatModels */,
 				4F13E946237DD72E005BCAE9 /* AccountsListModel.swift */,
 				4F13E937237DD5D9005BCAE9 /* ContactsForAccountModel.swift */,
 				4F13E93A237DD5D9005BCAE9 /* ContactDetailModel.swift */,
@@ -125,30 +143,30 @@
 		4FD6C46B1B754AF1002F9F90 = {
 			isa = PBXGroup;
 			children = (
-				4FD6C4761B754AF1002F9F90 /* IPFPatientApp */,
+				4FD6C4761B754AF1002F9F90 /* SFHealthKitDemoApp */,
 				4FD6C4751B754AF1002F9F90 /* Products */,
-				DDFDDF0A29E4BDD114B51BBC /* Pods */,
 				6B868AEB1ACA7FCA4636C7F7 /* Frameworks */,
+				A1D3E24AA163779D7476A723 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		4FD6C4751B754AF1002F9F90 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4FD6C4741B754AF1002F9F90 /* IPFPatientApp.app */,
+				4FD6C4741B754AF1002F9F90 /* SFHealthKitDemoApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4FD6C4761B754AF1002F9F90 /* IPFPatientApp */ = {
+		4FD6C4761B754AF1002F9F90 /* SFHealthKitDemoApp */ = {
 			isa = PBXGroup;
 			children = (
 				E5A2A9F524C0335600DB959A /* Resources */,
-				4FF12F8A1DCA91F5004D9EF9 /* IPFPatientApp.entitlements */,
+				4FF12F8A1DCA91F5004D9EF9 /* SFHealthKitDemoApp.entitlements */,
 				4FD6C4A11B755265002F9F90 /* Classes */,
 				4FD6C4771B754AF1002F9F90 /* Supporting Files */,
 			);
-			path = IPFPatientApp;
+			path = SFHealthKitDemoApp;
 			sourceTree = "<group>";
 		};
 		4FD6C4771B754AF1002F9F90 /* Supporting Files */ = {
@@ -167,6 +185,7 @@
 		4FD6C4A11B755265002F9F90 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E581006B254725FB005A2696 /* Helper */,
 				E5A2AA0524C1B8EC00DB959A /* Extensions */,
 				4F13E944237DD626005BCAE9 /* SwiftUI */,
 				4F13E945237DD62D005BCAE9 /* Models */,
@@ -181,18 +200,47 @@
 			isa = PBXGroup;
 			children = (
 				E556DF8724B4B9E1005D0DDF /* HealthKit.framework */,
-				82A29C75280BDF73123F14B4 /* Pods_IPFPatientApp.framework */,
+				F6ACA68403AC6C9D35D53E55 /* Pods_SFHealthKitDemoApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DDFDDF0A29E4BDD114B51BBC /* Pods */ = {
+		A1D3E24AA163779D7476A723 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				762732C14CFE40A989C3AD70 /* Pods-IPFPatientApp.debug.xcconfig */,
-				045D1C5BC2F1EADFDFB3671E /* Pods-IPFPatientApp.release.xcconfig */,
+				45548CCBD204A8C159977B91 /* Pods-SFHealthKitDemoApp.debug.xcconfig */,
+				F32AF071172821B277B5930B /* Pods-SFHealthKitDemoApp.release.xcconfig */,
 			);
-			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E581005F254722C1005A2696 /* ChatViews */ = {
+			isa = PBXGroup;
+			children = (
+				E5810060254722D2005A2696 /* ContentMessageView.swift */,
+				E58100622547238B005A2696 /* MessageView.swift */,
+				E5810069254725C5005A2696 /* ChatView.swift */,
+			);
+			path = ChatViews;
+			sourceTree = "<group>";
+		};
+		E58100642547249A005A2696 /* ChatModels */ = {
+			isa = PBXGroup;
+			children = (
+				E5810065254724A7005A2696 /* Message.swift */,
+				E5810067254724C6005A2696 /* User.swift */,
+			);
+			path = ChatModels;
+			sourceTree = "<group>";
+		};
+		E581006B254725FB005A2696 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E581006C25472614005A2696 /* ChatHelper.swift */,
+				E581006E25472628005A2696 /* KeyboardResponder.swift */,
+				E58100702547263E005A2696 /* ViewExtension.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		E5A2A9F524C0335600DB959A /* Resources */ = {
@@ -214,23 +262,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4FD6C4731B754AF1002F9F90 /* IPFPatientApp */ = {
+		4FD6C4731B754AF1002F9F90 /* SFHealthKitDemoApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4FD6C4931B754AF1002F9F90 /* Build configuration list for PBXNativeTarget "IPFPatientApp" */;
+			buildConfigurationList = 4FD6C4931B754AF1002F9F90 /* Build configuration list for PBXNativeTarget "SFHealthKitDemoApp" */;
 			buildPhases = (
-				FF74F0F7AF3E58C14EBE5178 /* [CP] Check Pods Manifest.lock */,
+				21481137C5DD72F5D076D662 /* [CP] Check Pods Manifest.lock */,
 				4FD6C4701B754AF1002F9F90 /* Sources */,
 				4FD6C4711B754AF1002F9F90 /* Frameworks */,
 				4FD6C4721B754AF1002F9F90 /* Resources */,
-				7056FC8D1D194E5113988767 /* [CP] Embed Pods Frameworks */,
+				C92F76751AF32A8B26136E46 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = IPFPatientApp;
+			name = SFHealthKitDemoApp;
 			productName = IPFPatientApp;
-			productReference = 4FD6C4741B754AF1002F9F90 /* IPFPatientApp.app */;
+			productReference = 4FD6C4741B754AF1002F9F90 /* SFHealthKitDemoApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -254,7 +302,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4FD6C46F1B754AF1002F9F90 /* Build configuration list for PBXProject "IPFPatientApp" */;
+			buildConfigurationList = 4FD6C46F1B754AF1002F9F90 /* Build configuration list for PBXProject "SFHealthKitDemoApp" */;
 			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -267,7 +315,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4FD6C4731B754AF1002F9F90 /* IPFPatientApp */,
+				4FD6C4731B754AF1002F9F90 /* SFHealthKitDemoApp */,
 			);
 		};
 /* End PBXProject section */
@@ -288,39 +336,43 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7056FC8D1D194E5113988767 /* [CP] Embed Pods Frameworks */ = {
+		21481137C5DD72F5D076D662 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IPFPatientApp/Pods-IPFPatientApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IPFPatientApp/Pods-IPFPatientApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IPFPatientApp/Pods-IPFPatientApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FF74F0F7AF3E58C14EBE5178 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-IPFPatientApp-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SFHealthKitDemoApp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C92F76751AF32A8B26136E46 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SFHealthKitDemoApp/Pods-SFHealthKitDemoApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SFHealthKitDemoApp/Pods-SFHealthKitDemoApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SFHealthKitDemoApp/Pods-SFHealthKitDemoApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -334,12 +386,16 @@
 				B73B520D234FA65F001B069B /* SceneDelegate.swift in Sources */,
 				E5A2A9F424C02DEE00DB959A /* HealthDataTypeRow.swift in Sources */,
 				E5A2A9FD24C0987B00DB959A /* HealthMeasurementRow.swift in Sources */,
+				E581006A254725C5005A2696 /* ChatView.swift in Sources */,
 				4FD6C47A1B754AF1002F9F90 /* AppDelegate.swift in Sources */,
+				E5810068254724C6005A2696 /* User.swift in Sources */,
 				E556DF8624B4B7F0005D0DDF /* ViewRouter.swift in Sources */,
 				E5A2A9FB24C04E7500DB959A /* HealthDataModel.swift in Sources */,
 				4F13E947237DD72E005BCAE9 /* AccountsListModel.swift in Sources */,
 				E53DF63424D1710E00117F79 /* TimelineRow.swift in Sources */,
+				E5810066254724A7005A2696 /* Message.swift in Sources */,
 				E53DF63224D06DA500117F79 /* MainProfileView.swift in Sources */,
+				E581006D25472614005A2696 /* ChatHelper.swift in Sources */,
 				E5A2AA0924C1B97600DB959A /* UIImageExtensions.swift in Sources */,
 				E52C651F24F680CE0060F77B /* Task.swift in Sources */,
 				E5A2A9FF24C1953100DB959A /* HealthMeasurementsList.swift in Sources */,
@@ -347,7 +403,11 @@
 				E53DF63624D1713700117F79 /* TimelineModel.swift in Sources */,
 				4F13E93C237DD5D9005BCAE9 /* ContactsForAccountModel.swift in Sources */,
 				4F13E93F237DD5D9005BCAE9 /* ContactDetailModel.swift in Sources */,
+				E58100632547238B005A2696 /* MessageView.swift in Sources */,
+				E5810061254722D2005A2696 /* ContentMessageView.swift in Sources */,
+				E581006F25472628005A2696 /* KeyboardResponder.swift in Sources */,
 				E556DF8424B4B76B005D0DDF /* TabMenuView.swift in Sources */,
+				E58100712547263E005A2696 /* ViewExtension.swift in Sources */,
 				4F393A291C3C8BCD00B3EA13 /* main.swift in Sources */,
 				E5A2A9F924C03FA700DB959A /* MainHKView.swift in Sources */,
 				4FD6C4A01B755242002F9F90 /* InitialViewController.swift in Sources */,
@@ -469,47 +529,47 @@
 		};
 		4FD6C4941B754AF1002F9F90 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 762732C14CFE40A989C3AD70 /* Pods-IPFPatientApp.debug.xcconfig */;
+			baseConfigurationReference = 45548CCBD204A8C159977B91 /* Pods-SFHealthKitDemoApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = IPFPatientApp/IPFPatientApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SFHealthKitDemoApp/SFHealthKitDemoApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4WQ2T93P22;
-				INFOPLIST_FILE = IPFPatientApp/Info.plist;
+				INFOPLIST_FILE = SFHealthKitDemoApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "-DSIGNPOST_ENABLED";
-				PRODUCT_BUNDLE_IDENTIFIER = com.salesforce.ios.IPFPatientApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.salesforce.ios.-SFHealthKitDemoApp";
+				PRODUCT_NAME = SFHealthKitDemoApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "IPFPatientApp/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SFHealthKitDemoApp/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		4FD6C4951B754AF1002F9F90 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 045D1C5BC2F1EADFDFB3671E /* Pods-IPFPatientApp.release.xcconfig */;
+			baseConfigurationReference = F32AF071172821B277B5930B /* Pods-SFHealthKitDemoApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = IPFPatientApp/IPFPatientApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = SFHealthKitDemoApp/SFHealthKitDemoApp.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4WQ2T93P22;
-				INFOPLIST_FILE = IPFPatientApp/Info.plist;
+				INFOPLIST_FILE = SFHealthKitDemoApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.salesforce.ios.IPFPatientApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.salesforce.ios.-SFHealthKitDemoApp";
+				PRODUCT_NAME = SFHealthKitDemoApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "IPFPatientApp/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "SFHealthKitDemoApp/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -517,7 +577,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4FD6C46F1B754AF1002F9F90 /* Build configuration list for PBXProject "IPFPatientApp" */ = {
+		4FD6C46F1B754AF1002F9F90 /* Build configuration list for PBXProject "SFHealthKitDemoApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4FD6C4911B754AF1002F9F90 /* Debug */,
@@ -526,7 +586,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4FD6C4931B754AF1002F9F90 /* Build configuration list for PBXNativeTarget "IPFPatientApp" */ = {
+		4FD6C4931B754AF1002F9F90 /* Build configuration list for PBXNativeTarget "SFHealthKitDemoApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4FD6C4941B754AF1002F9F90 /* Debug */,

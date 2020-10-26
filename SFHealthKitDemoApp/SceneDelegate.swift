@@ -31,6 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var syncHKDataModel = SyncHKDataModel()
+    var chatHelper = ChatHelper()
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
@@ -99,6 +100,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
        self.window?.rootViewController = UIHostingController(
            rootView: TabMenuView()
                 .environmentObject(syncHKDataModel)
+                .environmentObject(chatHelper)
        )
    }
    

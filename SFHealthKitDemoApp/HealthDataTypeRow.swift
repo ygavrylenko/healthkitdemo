@@ -10,7 +10,7 @@ import SwiftUI
 
 struct HealthDataTypeRow: View {
     var kpiname: String //name of health measurement
-    var measurement: ForcedVitalCapacity?
+    var measurement: HealthKitMeasurement
     
     var body: some View {
         VStack {
@@ -29,7 +29,7 @@ struct HealthDataTypeRow: View {
                 
             }
             HStack{
-                Text(self.measurement!.quantityString)
+                Text(self.measurement.quantityString)
                     .font(.title)
                     .foregroundColor(Color.black)
                 Text("L")
@@ -46,6 +46,6 @@ struct HealthDataTypeRow: View {
 struct HealthDataTypeRow_Previews: PreviewProvider {
     static var previews: some View {
         HealthDataTypeRow(kpiname: "Forced Expiratory Volume, 1 sec",
-                          measurement: ForcedVitalCapacity(id: "1234567890", quantityString: "4.55", quantityDouble: 4.55, date: Date(), dateString: "16-07-2020", deviceName: "NuvoAir"))
+                          measurement: HealthKitMeasurement(id: "1234567890", quantityString: "4.55", quantityDouble: 4.55, date: Date(), dateString: "16-07-2020", deviceName: "NuvoAir"))
     }
 }

@@ -1,7 +1,7 @@
 platform :ios, '13.0'
 
-project 'IPFPatientApp.xcodeproj'
-target 'IPFPatientApp' do
+project 'SFHealthKitDemoApp.xcodeproj'
+target 'SFHealthKitDemoApp' do
 
 source 'https://cdn.cocoapods.org/'
 

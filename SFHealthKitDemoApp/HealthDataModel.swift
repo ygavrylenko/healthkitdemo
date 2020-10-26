@@ -11,7 +11,7 @@ import Combine
 import HealthKit
 
 
-struct ForcedVitalCapacity: Hashable, Identifiable, Decodable {
+struct HealthKitMeasurement: Hashable, Identifiable, Decodable {
     let id: String
     let quantityString: String
     let quantityDouble: Double
@@ -26,8 +26,8 @@ fileprivate enum ATError: Error {
 
 class HealthDataModel: ObservableObject {
     let store: HKHealthStore
-    var fvcData: [ForcedVitalCapacity] = []
-    var fevData: [ForcedVitalCapacity] = []
+    var fvcData: [HealthKitMeasurement] = []
+    var fevData: [HealthKitMeasurement] = []
     let formatter = DateFormatter()
    
     
@@ -49,11 +49,11 @@ class HealthDataModel: ObservableObject {
         self.fetchFEV()
     }
     
-    func getFVCData() -> [ForcedVitalCapacity]{
+    func getFVCData() -> [HealthKitMeasurement]{
         return self.fvcData
     }
     
-    func getFEVData() -> [ForcedVitalCapacity]{
+    func getFEVData() -> [HealthKitMeasurement]{
         return self.fevData
     }
  
@@ -65,9 +65,6 @@ class HealthDataModel: ObservableObject {
            }
            
            guard
-               let dob = HKObjectType.characteristicType(forIdentifier: .dateOfBirth),
-               let sex = HKObjectType.characteristicType(forIdentifier: .biologicalSex),
-               let blood = HKObjectType.characteristicType(forIdentifier: .bloodType),
                let fvc = HKObjectType.quantityType(forIdentifier: .forcedVitalCapacity),
                let fev = HKObjectType.quantityType(forIdentifier: .forcedExpiratoryVolume1) else {
                    completion(false, ATError.missingType)
@@ -75,7 +72,7 @@ class HealthDataModel: ObservableObject {
            }
            
            let writing: Set<HKSampleType> = [fvc, fev]
-           let reading: Set<HKObjectType> = [dob, sex, blood, fvc, fev]
+           let reading: Set<HKObjectType> = [fvc, fev]
            
            HKHealthStore().requestAuthorization(toShare: writing, read: reading, completion: completion)
        }
@@ -101,7 +98,7 @@ class HealthDataModel: ObservableObject {
                                         
                                         for values in quantitySamples
                                         {
-                                            self.fvcData.append(ForcedVitalCapacity(id: values.uuid.uuidString,
+                                            self.fvcData.append(HealthKitMeasurement(id: values.uuid.uuidString,
                                                                                     quantityString: String(format: "%.2f",
                                                                                     values.quantity.doubleValue(for: HKUnit.liter())),
                                                                                     quantityDouble: values.quantity.doubleValue(for: HKUnit.liter()),
@@ -134,7 +131,7 @@ class HealthDataModel: ObservableObject {
                                         
                                         for values in quantitySamples
                                         {
-                                            self.fevData.append(ForcedVitalCapacity(id: values.uuid.uuidString,
+                                            self.fevData.append(HealthKitMeasurement(id: values.uuid.uuidString,
                                                                                     quantityString: String(format: "%.2f",
                                                                                     values.quantity.doubleValue(for: HKUnit.liter())),
                                                                                     quantityDouble: values.quantity.doubleValue(for: HKUnit.liter()),

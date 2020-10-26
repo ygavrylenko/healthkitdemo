@@ -15,6 +15,7 @@ struct TabMenuView: View {
     //@State var healthData: HealthDataView = HealthDataView()
     @State var healthData: MainHKView = MainHKView()
     @State var timelineView: TimelineView = TimelineView()
+    @State var chatView: ChatView = ChatView()
     @EnvironmentObject var syncHKDataModel: SyncHKDataModel
     
     
@@ -26,6 +27,8 @@ struct TabMenuView: View {
                     self.timelineView
                 } else if self.viewRouter.currentView == "settings" {
                     self.healthData
+                } else if self.viewRouter.currentView == "chat" {
+                    self.chatView
                 }
                 Spacer()
                 ZStack {
@@ -60,7 +63,7 @@ struct TabMenuView: View {
                             .frame(width: geometry.size.width/3, height: 75)
                             .foregroundColor(self.viewRouter.currentView == "contact" ? Color(red: 97 / 255, green: 164 / 255, blue: 103 / 255) : .gray)
                             .onTapGesture {
-                                self.viewRouter.currentView = "contact"
+                                self.viewRouter.currentView = "chat"
                             }
                     }
                         .frame(width: geometry.size.width, height: geometry.size.height/10)

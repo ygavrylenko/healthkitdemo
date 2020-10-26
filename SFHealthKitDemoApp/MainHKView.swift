@@ -30,12 +30,12 @@ struct MainHKView: View {
             VStack{
              
                 NavigationLink(destination: HealthMeasurementsList(hkdata: healthDataModel.fevData, dataTypeLabel: "Forced Expiratory Volume, 1 sec")) {
-                    HealthDataTypeRow(kpiname: "Forced Expiratory Volume, 1 sec", measurement: healthDataModel.fevData.last)
+                    HealthDataTypeRow(kpiname: "Forced Expiratory Volume, 1 sec", measurement: healthDataModel.fevData.last ?? HealthKitMeasurement(id: "1234567890", quantityString: "0.00", quantityDouble: 0.00, date: Date(), dateString: "16-07-2020", deviceName: "Unknown Device"))
                         .cornerRadius(20)
                 }
                 
                 NavigationLink(destination: HealthMeasurementsList(hkdata: healthDataModel.fvcData, dataTypeLabel: "Forced Vital Capacity")) {
-                    HealthDataTypeRow(kpiname: "Forced Vital Capacity", measurement: healthDataModel.fvcData.last)
+                    HealthDataTypeRow(kpiname: "Forced Vital Capacity", measurement: healthDataModel.fvcData.last ?? HealthKitMeasurement(id: "1234567890", quantityString: "0.00", quantityDouble: 0.00, date: Date(), dateString: "16-07-2020", deviceName: "Unknown Device"))
                         .cornerRadius(20)
                 }                
                 Spacer()
