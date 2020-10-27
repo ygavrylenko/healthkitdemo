@@ -25,8 +25,8 @@ struct HealthMeasurementsList: View {
 struct HealthMeasurementsList_Previews: PreviewProvider {
     static var previews: some View {
         HealthMeasurementsList(hkdata:
-            [HealthKitMeasurement(id: "1234567890", quantityString: "4.55", quantityDouble: 4.55, date: Date(), dateString: "17-07-2020", deviceName: "NuvoAir"),
-            HealthKitMeasurement(id: "2345678901", quantityString: "3.99", quantityDouble: 3.99, date: Date(), dateString: "17-07-2020", deviceName: "NuvoAir")],
+            [HealthKitMeasurement(id: "1234567890", quantityString: "4.55", quantityDouble: 4.55, date: Date(), dateString: "17-07-2020", deviceName: "NuvoAir", type: "bodyMass", icon: "Weight", unit: "lbs"),
+            HealthKitMeasurement(id: "2345678901", quantityString: "3.99", quantityDouble: 3.99, date: Date(), dateString: "17-07-2020", deviceName: "NuvoAir", type: "heartRate", icon: "Heart", unit: "bpm")],
                                dataTypeLabel: "Forced Vital Capacity"
         )
     }

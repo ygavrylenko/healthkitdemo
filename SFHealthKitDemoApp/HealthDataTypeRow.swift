@@ -15,13 +15,13 @@ struct HealthDataTypeRow: View {
     var body: some View {
         VStack {
             HStack {
-                Image("lung_icon")
+                Image(self.measurement.icon)
+                    .renderingMode(.original)
                     .resizable()
-                    .frame(width: 30, height: 25)
-                    .foregroundColor(Color(red: 97 / 255, green: 164 / 255, blue: 103 / 255))
+                    .frame(width: 25, height: 25)
                 Text(self.kpiname)
                     .font(.headline)
-                    .foregroundColor(Color(red: 97 / 255, green: 164 / 255, blue: 103 / 255))
+                    //.foregroundColor(Color(red: 97 / 255, green: 164 / 255, blue: 103 / 255))
                     .bold()
                 Spacer()
                 Image(systemName: "arrow.right.circle")
@@ -32,7 +32,7 @@ struct HealthDataTypeRow: View {
                 Text(self.measurement.quantityString)
                     .font(.title)
                     .foregroundColor(Color.black)
-                Text("L")
+                Text(self.measurement.unit)
                     .foregroundColor(Color.gray)
                     .bold()
                 Spacer()
@@ -46,6 +46,6 @@ struct HealthDataTypeRow: View {
 struct HealthDataTypeRow_Previews: PreviewProvider {
     static var previews: some View {
         HealthDataTypeRow(kpiname: "Forced Expiratory Volume, 1 sec",
-                          measurement: HealthKitMeasurement(id: "1234567890", quantityString: "4.55", quantityDouble: 4.55, date: Date(), dateString: "16-07-2020", deviceName: "NuvoAir"))
+                          measurement: HealthKitMeasurement(id: "1234567890", quantityString: "4.55", quantityDouble: 4.55, date: Date(), dateString: "16-07-2020", deviceName: "NuvoAir", type: "heartRate", icon: "Weight", unit: "bpm"))
     }
 }

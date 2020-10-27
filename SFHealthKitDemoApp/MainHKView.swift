@@ -29,13 +29,13 @@ struct MainHKView: View {
         NavigationView {
             VStack{
              
-                NavigationLink(destination: HealthMeasurementsList(hkdata: healthDataModel.fevData, dataTypeLabel: "Forced Expiratory Volume, 1 sec")) {
-                    HealthDataTypeRow(kpiname: "Forced Expiratory Volume, 1 sec", measurement: healthDataModel.fevData.last ?? HealthKitMeasurement(id: "1234567890", quantityString: "0.00", quantityDouble: 0.00, date: Date(), dateString: "16-07-2020", deviceName: "Unknown Device"))
+                NavigationLink(destination: HealthMeasurementsList(hkdata: healthDataModel.bodyMassData, dataTypeLabel: "Body Mass")) {
+                    HealthDataTypeRow(kpiname: "Body Mass", measurement: healthDataModel.bodyMassData.last ?? HealthKitMeasurement(id: "1234567890", quantityString: "0.00", quantityDouble: 0.00, date: Date(), dateString: "16-07-2020", deviceName: "Unknown Device", type: "heabodyMass", icon: "Weight", unit: "lbs"))
                         .cornerRadius(20)
                 }
                 
-                NavigationLink(destination: HealthMeasurementsList(hkdata: healthDataModel.fvcData, dataTypeLabel: "Forced Vital Capacity")) {
-                    HealthDataTypeRow(kpiname: "Forced Vital Capacity", measurement: healthDataModel.fvcData.last ?? HealthKitMeasurement(id: "1234567890", quantityString: "0.00", quantityDouble: 0.00, date: Date(), dateString: "16-07-2020", deviceName: "Unknown Device"))
+                NavigationLink(destination: HealthMeasurementsList(hkdata: healthDataModel.heartRateData, dataTypeLabel: "Heart Rate")) {
+                    HealthDataTypeRow(kpiname: "Heart Rate", measurement: healthDataModel.heartRateData.last ?? HealthKitMeasurement(id: "1234567890", quantityString: "0.00", quantityDouble: 0.00, date: Date(), dateString: "16-07-2020", deviceName: "Unknown Device", type: "heartRate", icon: "Heart", unit: "bpm"))
                         .cornerRadius(20)
                 }                
                 Spacer()
@@ -44,11 +44,11 @@ struct MainHKView: View {
             //.padding(.top, 10)
             .background(Color(red: 242 / 255, green: 242 / 255, blue: 247 / 255))
             //.edgesIgnoringSafeArea(.all)
-            .navigationBarTitle("Your Respiratory Data", displayMode: .inline)
+            .navigationBarTitle("Your Health Data", displayMode: .inline)
             .navigationBarItems(trailing:
                 Button(action: {
                     self.showProgress.toggle()
-                    self.syncHKDataModel.setMeasurementsFromHK(measurements: self.healthDataModel.getFVCData())
+                    self.syncHKDataModel.setMeasurementsFromHK(measurements: self.healthDataModel.getBodyMassData())
                     print("Submitting")
                     self.uploadComplete = self.syncHKDataModel.syncObservations()
                       .sink { _ in

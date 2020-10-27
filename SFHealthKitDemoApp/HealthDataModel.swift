@@ -18,6 +18,9 @@ struct HealthKitMeasurement: Hashable, Identifiable, Decodable {
     let date: Date
     let dateString: String
     let deviceName: String?
+    let type: String
+    let icon: String
+    let unit: String
 }
 
 fileprivate enum ATError: Error {
@@ -26,8 +29,8 @@ fileprivate enum ATError: Error {
 
 class HealthDataModel: ObservableObject {
     let store: HKHealthStore
-    var fvcData: [HealthKitMeasurement] = []
-    var fevData: [HealthKitMeasurement] = []
+    var bodyMassData: [HealthKitMeasurement] = []
+    var heartRateData: [HealthKitMeasurement] = []
     let formatter = DateFormatter()
    
     
@@ -36,25 +39,25 @@ class HealthDataModel: ObservableObject {
         store = HKHealthStore()
         self.authorize { (success, error) in
             print("HK Authorization finished - success: \(success); error: \(error)")
-            self.fetchFVC()
-            self.fetchFEV()
+            self.fetchBodyMass()
+            self.fetchHeartRate()
         }
     }
     
     
     func fetchData(){
-        self.fvcData = []
-        self.fevData = []
-        self.fetchFVC()
-        self.fetchFEV()
+        self.bodyMassData = []
+        self.heartRateData = []
+        self.fetchBodyMass()
+        self.fetchHeartRate()
     }
     
-    func getFVCData() -> [HealthKitMeasurement]{
-        return self.fvcData
+    func getBodyMassData() -> [HealthKitMeasurement]{
+        return self.bodyMassData
     }
     
-    func getFEVData() -> [HealthKitMeasurement]{
-        return self.fevData
+    func getHeartRateData() -> [HealthKitMeasurement]{
+        return self.heartRateData
     }
  
     
@@ -65,27 +68,27 @@ class HealthDataModel: ObservableObject {
            }
            
            guard
-               let fvc = HKObjectType.quantityType(forIdentifier: .forcedVitalCapacity),
-               let fev = HKObjectType.quantityType(forIdentifier: .forcedExpiratoryVolume1) else {
+            let bodyMassData = HKObjectType.quantityType(forIdentifier: .bodyMass),
+            let heartRateData = HKObjectType.quantityType(forIdentifier: .heartRate) else {
                    completion(false, ATError.missingType)
                    return
            }
            
-           let writing: Set<HKSampleType> = [fvc, fev]
-           let reading: Set<HKObjectType> = [fvc, fev]
+           let writing: Set<HKSampleType> = [bodyMassData, heartRateData]
+           let reading: Set<HKObjectType> = [bodyMassData, heartRateData]
            
            HKHealthStore().requestAuthorization(toShare: writing, read: reading, completion: completion)
        }
     
-    private func fetchFVC(){
-        guard let fvcType = HKSampleType.quantityType(forIdentifier: .forcedVitalCapacity) else {
+    private func fetchBodyMass(){
+        guard let fvcType = HKSampleType.quantityType(forIdentifier: .bodyMass) else {
                     print("Sample type not available")
                     return
             }
         
         let lastWeekPredicate = HKQuery.predicateForSamples(withStart: Date().oneWeekAgo, end: Date(), options: .strictEndDate)
         
-        let fvcQuery = HKSampleQuery.init(sampleType: fvcType,
+        let bodyMassQuery = HKSampleQuery.init(sampleType: fvcType,
                                        predicate: lastWeekPredicate,
                                        limit: HKObjectQueryNoLimit,
                                        sortDescriptors: nil) { (query, results, error) in
@@ -98,27 +101,31 @@ class HealthDataModel: ObservableObject {
                                         
                                         for values in quantitySamples
                                         {
-                                            self.fvcData.append(HealthKitMeasurement(id: values.uuid.uuidString,
+                                            self.bodyMassData.append(HealthKitMeasurement(id: values.uuid.uuidString,
                                                                                     quantityString: String(format: "%.2f",
-                                                                                    values.quantity.doubleValue(for: HKUnit.liter())),
-                                                                                    quantityDouble: values.quantity.doubleValue(for: HKUnit.liter()),
+                                                                                                           values.quantity.doubleValue(for: HKUnit.pound())),
+                                                                                    quantityDouble: values.quantity.doubleValue(for: HKUnit.pound()),
                                                                                     date: values.endDate,
                                                                                     dateString: self.formatter.string(from: values.endDate),
-                                                                                    deviceName: values.device?.name))
+                                                                                    deviceName: values.device?.name,
+                                                                                    type: "bodyMass",
+                                                                                    icon: "Weight",
+                                                                                    unit: "lbs"))
                                         }
         }
-        store.execute(fvcQuery)
+        store.execute(bodyMassQuery)
     }
     
-    private func fetchFEV(){
-        guard let fvcType = HKSampleType.quantityType(forIdentifier: .forcedExpiratoryVolume1) else {
+    private func fetchHeartRate(){
+        guard let fvcType = HKSampleType.quantityType(forIdentifier: .heartRate) else {
                     print("Sample type not available")
                     return
             }
         
         let lastWeekPredicate = HKQuery.predicateForSamples(withStart: Date().oneWeekAgo, end: Date(), options: .strictEndDate)
+        let bpmUnit = HKUnit.count().unitDivided(by: HKUnit.minute())
         
-        let fevQuery = HKSampleQuery.init(sampleType: fvcType,
+        let heartRateQuery = HKSampleQuery.init(sampleType: fvcType,
                                        predicate: lastWeekPredicate,
                                        limit: HKObjectQueryNoLimit,
                                        sortDescriptors: nil) { (query, results, error) in
@@ -131,16 +138,19 @@ class HealthDataModel: ObservableObject {
                                         
                                         for values in quantitySamples
                                         {
-                                            self.fevData.append(HealthKitMeasurement(id: values.uuid.uuidString,
+                                            self.heartRateData.append(HealthKitMeasurement(id: values.uuid.uuidString,
                                                                                     quantityString: String(format: "%.2f",
-                                                                                    values.quantity.doubleValue(for: HKUnit.liter())),
-                                                                                    quantityDouble: values.quantity.doubleValue(for: HKUnit.liter()),
+                                                                                                           values.quantity.doubleValue(for: bpmUnit)),
+                                                                                    quantityDouble: values.quantity.doubleValue(for: bpmUnit),
                                                                                     date: values.endDate,
                                                                                     dateString: self.formatter.string(from: values.endDate),
-                                                                                    deviceName: values.device?.name))
+                                                                                    deviceName: values.device?.name,
+                                                                                    type: "heartRate",
+                                                                                    icon: "Heart",
+                                                                                    unit: "bpm"))
                                         }
         }
-        store.execute(fevQuery)
+        store.execute(heartRateQuery)
     }
 }
 

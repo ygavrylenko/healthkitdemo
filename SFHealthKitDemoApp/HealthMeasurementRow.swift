@@ -14,13 +14,13 @@ struct HealthMeasurementRow: View {
     var body: some View {
         VStack {
                 HStack {
-                    Image("lung_icon")
+                    Image(measurement.icon)
                         .resizable()
-                        .frame(width: 25, height: 20)
+                        .frame(width: 20, height: 20)
                     Text(measurement.quantityString)
                         .font(.headline)
                         .bold()
-                    Text("L")
+                    Text(measurement.unit)
                         .font(.headline)
                         .foregroundColor(Color.gray)
                         .bold()
@@ -36,6 +36,6 @@ struct HealthMeasurementRow: View {
 
 struct HealthMeasurementRow_Previews: PreviewProvider {
     static var previews: some View {
-        HealthMeasurementRow(measurement: HealthKitMeasurement(id: "1234567890", quantityString: "4.55", quantityDouble: 4.55, date: Date(), dateString: "16-07-2020", deviceName: "NuvoAir"))
+        HealthMeasurementRow(measurement: HealthKitMeasurement(id: "1234567890", quantityString: "4.55", quantityDouble: 4.55, date: Date(), dateString: "16-07-2020", deviceName: "NuvoAir", type: "bodyMass", icon: "Heart", unit: "lbs"))
     }
 }
