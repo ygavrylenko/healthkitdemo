@@ -48,7 +48,8 @@ struct MainHKView: View {
             .navigationBarItems(trailing:
                 Button(action: {
                     self.showProgress.toggle()
-                    self.syncHKDataModel.setMeasurementsFromHK(measurements: self.healthDataModel.getBodyMassData())
+                    self.syncHKDataModel.setWeightMeasurementsFromHK(measurements: self.healthDataModel.getBodyMassData())
+                    self.syncHKDataModel.setHeartRateMeasurementsFromHK(measurements: self.healthDataModel.getHeartRateData())
                     print("Submitting")
                     self.uploadComplete = self.syncHKDataModel.syncObservations()
                       .sink { _ in

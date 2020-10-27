@@ -22,7 +22,8 @@ class SyncHKDataModel: ObservableObject {
     
     private var compositeRequestBuilder = CompositeRequestBuilder().setAllOrNone(false)
     
-    var measurements: [HealthKitMeasurement] = []
+    var weightMeasurements: [HealthKitMeasurement] = []
+    var heartMeasurements: [HealthKitMeasurement] = []
     
     @Published var accountId = "" {
       didSet {
@@ -36,8 +37,12 @@ class SyncHKDataModel: ObservableObject {
     private var accountIdCancellable: AnyCancellable?
     private var compositeCancellable: AnyCancellable?
     
-    func setMeasurementsFromHK(measurements: [HealthKitMeasurement]){
-        self.measurements = measurements
+    func setWeightMeasurementsFromHK(measurements: [HealthKitMeasurement]){
+        self.weightMeasurements = measurements
+    }
+    
+    func setHeartRateMeasurementsFromHK(measurements: [HealthKitMeasurement]){
+        self.heartMeasurements = measurements
     }
     
     func fetchAccountId() -> AnyPublisher<String, Never> {
@@ -68,7 +73,6 @@ class SyncHKDataModel: ObservableObject {
                 .sink { accountId in
                     print("Uploading to Salesforce: fetched accountId: ", accountId)
                     self.createObservationEventsRequests(accountIdString: accountId)
-                    //self.createTestObservationsRequests(accountIdString: accountId)
                     
                     let compositeRequest = self.compositeRequestBuilder.buildCompositeRequest("v49.0")
                     self.syncTaskCancellable = RestClient.shared.publisher(for: compositeRequest)
@@ -92,16 +96,35 @@ class SyncHKDataModel: ObservableObject {
         customFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
         customFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         
-        self.measurements.enumerated().forEach { (index, measurement) -> Void in
+        
+        self.weightMeasurements.enumerated().forEach { (index, measurement) -> Void in
             var record = RestClient.SalesforceRecord()
-            record["ObservationName__c"] = "AppleHK Forced Vital Capacity"
+            record["CodeSet_Id__c"] = "healthkit-weight"
+            record["Id__c"] = measurement.id
+            record["ObservationName__c"] = "AppleHK Weight Measurement"
             record["ObservedSubjectId__c"] = accountIdString
             record["ObservationValue__c"] = String(format: "%.2f", measurement.quantityDouble)
             record["ObservationDate__c"] = customFormatter.string(from: measurement.date)
+            record["UOM__c"] = "lbs"
 
             let observationRequest = RestClient.shared.requestForCreate(withObjectType: "Observation_Event__e", fields: record, apiVersion: "v49.0")
             
-            compositeRequestBuilder.add(observationRequest, referenceId: "observationevents\(index)")
+            compositeRequestBuilder.add(observationRequest, referenceId: "weightnevents\(index)")
+          }
+        
+        self.heartMeasurements.enumerated().forEach { (index, measurement) -> Void in
+            var record = RestClient.SalesforceRecord()
+            record["Id__c"] = measurement.id
+            record["ObservationName__c"] = "AppleHK Heart Rate Measurement"
+            record["ObservedSubjectId__c"] = accountIdString
+            record["ObservationValue__c"] = String(format: "%.2f", measurement.quantityDouble)
+            record["ObservationDate__c"] = customFormatter.string(from: measurement.date)
+            record["CodeSet_Id__c"] = "healthkit-heartrate"
+            record["UOM__c"] = "bpm"
+
+            let observationRequest = RestClient.shared.requestForCreate(withObjectType: "Observation_Event__e", fields: record, apiVersion: "v49.0")
+            
+            compositeRequestBuilder.add(observationRequest, referenceId: "heartevents\(index)")
           }
     }
     
