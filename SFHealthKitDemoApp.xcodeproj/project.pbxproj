@@ -66,6 +66,7 @@
 		CEA8CA031F071B2300448B51 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "mobile_sdk/SalesforceMobileSDK-iOS/shared/resources/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		E52C651E24F680CE0060F77B /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		E52C652424F7906C0060F77B /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
+		E5322BFB2549F2D9009AD5F7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E53DF63124D06DA400117F79 /* MainProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProfileView.swift; sourceTree = "<group>"; };
 		E53DF63324D1710E00117F79 /* TimelineRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineRow.swift; sourceTree = "<group>"; };
 		E53DF63524D1713700117F79 /* TimelineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineModel.swift; sourceTree = "<group>"; };
@@ -161,6 +162,7 @@
 		4FD6C4761B754AF1002F9F90 /* SFHealthKitDemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				E5322BFB2549F2D9009AD5F7 /* Images.xcassets */,
 				E5A2A9F524C0335600DB959A /* Resources */,
 				4FF12F8A1DCA91F5004D9EF9 /* SFHealthKitDemoApp.entitlements */,
 				4FD6C4A11B755265002F9F90 /* Classes */,

@@ -29,7 +29,7 @@ This app is a sample application that demonstrates how data collected by Apple H
     SFHealthKitDemoApp.xcworkspace
     ```
 
-1. Go to **/Supporting Files/bootconfig.plist and add following entries (if already exist just fill the values):
+1. Go to **/Supporting Files/bootconfig.plist and replace following entry:
 
 > IMPORTANT: From the Part 1 you extracted **CONSUMER KEY** from connected app "HealthKitDemo Mobile App" 
 
