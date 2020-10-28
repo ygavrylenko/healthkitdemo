@@ -9,13 +9,6 @@ import Foundation
 import SalesforceSDKCore
 import Combine
 
-struct Measurement: Hashable, Identifiable, Decodable {
-    let id: String
-    let date: Date
-    let type: String
-    let value: Double
-}
-
 class SyncHKDataModel: ObservableObject {
     let newSync = PassthroughSubject<SyncHKDataModel, Never>()
     let completedPublisher = PassthroughSubject<Bool, Never>()

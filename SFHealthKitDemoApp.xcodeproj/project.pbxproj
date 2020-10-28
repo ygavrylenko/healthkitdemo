@@ -55,7 +55,7 @@
 		4F13E941237DD5EE005BCAE9 /* userstore.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = userstore.json; sourceTree = "<group>"; };
 		4F13E946237DD72E005BCAE9 /* AccountsListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsListModel.swift; sourceTree = "<group>"; };
 		4F393A281C3C8BCD00B3EA13 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		4FD6C4741B754AF1002F9F90 /* SFHealthKitDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFHealthKitDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FD6C4741B754AF1002F9F90 /* SF HealthKit Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SF HealthKit Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FD6C4781B754AF1002F9F90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FD6C4791B754AF1002F9F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FD6C49D1B755242002F9F90 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
@@ -153,7 +153,7 @@
 		4FD6C4751B754AF1002F9F90 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4FD6C4741B754AF1002F9F90 /* SFHealthKitDemoApp.app */,
+				4FD6C4741B754AF1002F9F90 /* SF HealthKit Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -278,7 +278,7 @@
 			);
 			name = SFHealthKitDemoApp;
 			productName = IPFPatientApp;
-			productReference = 4FD6C4741B754AF1002F9F90 /* SFHealthKitDemoApp.app */;
+			productReference = 4FD6C4741B754AF1002F9F90 /* SF HealthKit Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -543,11 +543,12 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "-DSIGNPOST_ENABLED";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.salesforce.ios.-SFHealthKitDemoApp";
-				PRODUCT_NAME = SFHealthKitDemoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.salesforce.ios.SFHealthKitDemoApp;
+				PRODUCT_NAME = "SF HealthKit Demo";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SFHealthKitDemoApp/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -566,11 +567,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.salesforce.ios.-SFHealthKitDemoApp";
-				PRODUCT_NAME = SFHealthKitDemoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.salesforce.ios.SFHealthKitDemoApp;
+				PRODUCT_NAME = "SF HealthKit Demo";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SFHealthKitDemoApp/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
