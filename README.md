@@ -41,7 +41,9 @@ This app is a sample application that demonstrates how data collected by Apple H
 
 <img src="images/bootconfig.png">
 
-1. Go to **/Supporting Files/Info.plist and add following entry (take the patient community endpoint from Part 1):
+1. Go to **/Supporting Files/Info.plist and add following entry (take the patient community endpoint from Part 1). Important: paste it without https// path:
+
+> IMPORTANT: Check that your community active and you have to publish it once! 
 
     ```
     SFDCOAuthLoginHost --> "sdodemo-main-COMMUNITYURL.force.com/anotherpath"
