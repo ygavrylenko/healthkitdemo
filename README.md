@@ -13,7 +13,7 @@ This app is a sample application that demonstrates how data collected by Apple H
 1. Clone this repository:
 
     ```
-    git clone ttps://github.com/ygavrylenko/healthkitdemo.git
+    git clone https://github.com/ygavrylenko/healthkitdemo.git
     cd healthkitdemo
     ```
 
