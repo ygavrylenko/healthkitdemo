@@ -21,7 +21,6 @@
 		B77BD8A321125B510036B284 /* bootconfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = B77BD8A221125B510036B284 /* bootconfig.plist */; };
 		E52C651F24F680CE0060F77B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C651E24F680CE0060F77B /* Task.swift */; };
 		E52C652524F7906C0060F77B /* TimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52C652424F7906C0060F77B /* TimelineView.swift */; };
-		E5322BFD254A0085009AD5F7 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5322BFC254A0085009AD5F7 /* Media.xcassets */; };
 		E53DF63224D06DA500117F79 /* MainProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53DF63124D06DA400117F79 /* MainProfileView.swift */; };
 		E53DF63424D1710E00117F79 /* TimelineRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53DF63324D1710E00117F79 /* TimelineRow.swift */; };
 		E53DF63624D1713700117F79 /* TimelineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53DF63524D1713700117F79 /* TimelineModel.swift */; };
@@ -45,6 +44,7 @@
 		E5A2AA0424C1B5E800DB959A /* SyncHKDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A2AA0324C1B5E800DB959A /* SyncHKDataModel.swift */; };
 		E5A2AA0724C1B91C00DB959A /* RestClientExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A2AA0624C1B91C00DB959A /* RestClientExtensions.swift */; };
 		E5A2AA0924C1B97600DB959A /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A2AA0824C1B97600DB959A /* UIImageExtensions.swift */; };
+		E5BEA201254A057C00056384 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5BEA200254A057C00056384 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,8 +65,6 @@
 		B77BD8A221125B510036B284 /* bootconfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = bootconfig.plist; sourceTree = "<group>"; };
 		E52C651E24F680CE0060F77B /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		E52C652424F7906C0060F77B /* TimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineView.swift; sourceTree = "<group>"; };
-		E5322BFB2549F2D9009AD5F7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		E5322BFC254A0085009AD5F7 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		E53DF63124D06DA400117F79 /* MainProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProfileView.swift; sourceTree = "<group>"; };
 		E53DF63324D1710E00117F79 /* TimelineRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineRow.swift; sourceTree = "<group>"; };
 		E53DF63524D1713700117F79 /* TimelineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineModel.swift; sourceTree = "<group>"; };
@@ -90,6 +88,7 @@
 		E5A2AA0324C1B5E800DB959A /* SyncHKDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncHKDataModel.swift; sourceTree = "<group>"; };
 		E5A2AA0624C1B91C00DB959A /* RestClientExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestClientExtensions.swift; sourceTree = "<group>"; };
 		E5A2AA0824C1B97600DB959A /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		E5BEA200254A057C00056384 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F32AF071172821B277B5930B /* Pods-SFHealthKitDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SFHealthKitDemoApp.release.xcconfig"; path = "Target Support Files/Pods-SFHealthKitDemoApp/Pods-SFHealthKitDemoApp.release.xcconfig"; sourceTree = "<group>"; };
 		F6ACA68403AC6C9D35D53E55 /* Pods_SFHealthKitDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SFHealthKitDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -144,7 +143,6 @@
 		4FD6C46B1B754AF1002F9F90 = {
 			isa = PBXGroup;
 			children = (
-				E5322BFC254A0085009AD5F7 /* Media.xcassets */,
 				4FD6C4761B754AF1002F9F90 /* SFHealthKitDemoApp */,
 				4FD6C4751B754AF1002F9F90 /* Products */,
 				6B868AEB1ACA7FCA4636C7F7 /* Frameworks */,
@@ -163,7 +161,6 @@
 		4FD6C4761B754AF1002F9F90 /* SFHealthKitDemoApp */ = {
 			isa = PBXGroup;
 			children = (
-				E5322BFB2549F2D9009AD5F7 /* Images.xcassets */,
 				E5A2A9F524C0335600DB959A /* Resources */,
 				4FF12F8A1DCA91F5004D9EF9 /* SFHealthKitDemoApp.entitlements */,
 				4FD6C4A11B755265002F9F90 /* Classes */,
@@ -180,6 +177,7 @@
 				B77BD8A221125B510036B284 /* bootconfig.plist */,
 				B7168FBB1FACC6F900A48DB5 /* LaunchScreen.storyboard */,
 				4FD6C4781B754AF1002F9F90 /* Info.plist */,
+				E5BEA200254A057C00056384 /* Images.xcassets */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -327,8 +325,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5322BFD254A0085009AD5F7 /* Media.xcassets in Resources */,
 				4F13E943237DD5EE005BCAE9 /* userstore.json in Resources */,
+				E5BEA201254A057C00056384 /* Images.xcassets in Resources */,
 				B77BD8A321125B510036B284 /* bootconfig.plist in Resources */,
 				4F13E942237DD5EE005BCAE9 /* usersyncs.json in Resources */,
 				B7168FBC1FACC6F900A48DB5 /* LaunchScreen.storyboard in Resources */,
