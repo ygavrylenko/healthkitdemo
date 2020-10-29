@@ -17,19 +17,19 @@ This app is a sample application that demonstrates how data collected by Apple H
     cd healthkitdemo
     ```
 
-1. Install Pod Dependencies (like Salesforce mobile SDK):
+2. Install Pod Dependencies (like Salesforce mobile SDK):
 
     ```
     ./install.js
 	```
 
-1. Open Workspace project from toor folder
+3. Open Workspace project from toor folder
 
     ```
     SFHealthKitDemoApp.xcworkspace
     ```
 
-1. Go to **/Supporting Files/bootconfig.plist and replace following entry:
+4. Go to **/Supporting Files/bootconfig.plist and replace following entry:
 
 > IMPORTANT: From the Part 1 you extracted **CONSUMER KEY** from connected app "HealthKitDemo Mobile App" 
 
@@ -41,7 +41,7 @@ This app is a sample application that demonstrates how data collected by Apple H
 
 <img src="images/bootconfig.png">
 
-1. Go to **/Supporting Files/Info.plist and add following entry (take the patient community endpoint from Part 1). Important: paste it without https// path:
+5. Go to **/Supporting Files/Info.plist and add following entry (take the patient community endpoint from Part 1). Important: paste it without https// path:
 
 > IMPORTANT: Check that your community active and you have to publish it once! 
 
@@ -49,12 +49,12 @@ This app is a sample application that demonstrates how data collected by Apple H
     SFDCOAuthLoginHost --> "sdodemo-main-COMMUNITYURL.force.com/anotherpath"
     ```
 
- 1. Now you are good to go! 
+ 6. Now you are good to go! 
  - Choose your emulator or your iPhone as a target (you have to specify develpment team if you use real iPhone)
  - build the project, your demo application starts now
- - you should also see some tasks for your patient on the first tab, retrieved from the org, if some exist
  - you should see communty log-in window, enter credentials of your communty patient (e.g. for Charles Green)
- - Before you start, close applicaton and enter some values in your HealthKit (you can do it manually)
+ - you should also see some tasks for your patient on the first tab, retrieved from the org, if some exist
+ - before you start, close applicaton and enter some values in your HealthKit (you can do it manually)
  - click on the tab in the middle, you should see the values from HealthKit
  - click on arrow button in order to synchronize the data to health cloud
  - change to health cloud, now you should see the measurements as CareObservation objects in related list! 
