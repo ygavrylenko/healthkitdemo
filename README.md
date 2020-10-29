@@ -1,3 +1,5 @@
+<img src="images/SF_HealthKit_Logo.png" width="350">
+
 # Saleforce Mobile SDK Demo of HealthKit Integration
 
 This app is a sample application that demonstrates how data collected by Apple HealthKit can be integrated into Mobile SDK app and forwared to Salesforce Health Cloud into Care Observation object.
@@ -49,13 +51,14 @@ This app is a sample application that demonstrates how data collected by Apple H
     SFDCOAuthLoginHost --> "sdodemo-main-COMMUNITYURL.force.com/anotherpath"
     ```
 
- 6. Now you are good to go! 
+ 6. Now that's where the rubber hits the road! 
  - Choose your emulator or your iPhone as a target (you have to specify develpment team if you use real iPhone)
- - build the project, your demo application starts now
- - you should see communty log-in window, enter credentials of your communty patient (e.g. for Charles Green)
- - you should also see some tasks for your patient on the first tab, retrieved from the org, if some exist
- - before you start, close applicaton and enter some values in your HealthKit (you can do it manually)
- - click on the tab in the middle, you should see the values from HealthKit
- - click on arrow button in order to synchronize the data to health cloud
- - change to health cloud, now you should see the measurements as CareObservation objects in related list! 
+ - Build the project, your demo application starts now
+ - You should see communty log-in window, enter credentials of your communty patient (e.g. for Charles Green)
+ - You have to authorize access to the Apple HealthKit if you start the app for the first time, please allow both type of measurements (Heart Rate and Weight)
+ - You should also see some tasks for your patient on the first tab, retrieved from the org, if some exist (if not add some for demo purposes)
+ - Before you start, close applicaton and enter some values in your HealthKit (you can do it manually)
+ - Click on the tab in the middle, you should see the values from HealthKit
+ - Click on arrow button in order to synchronize the data to health cloud
+ - Change to health cloud, now you should see the measurements as CareObservation objects in related list of your community patient! 
 
