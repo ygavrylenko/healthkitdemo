@@ -1,6 +1,6 @@
-<img src="images/SF_HealthKit_Logo.png" width="350">
-
 # Saleforce Mobile SDK Demo of HealthKit Integration
+
+<img src="images/SF_HealthKit_Logo.png" width="350">
 
 This app is a sample application that demonstrates how data collected by Apple HealthKit can be integrated into Mobile SDK app and forwared to Salesforce Health Cloud into Care Observation object.
 
