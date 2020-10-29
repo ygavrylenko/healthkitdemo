@@ -62,3 +62,9 @@ This app is a sample application that demonstrates how data collected by Apple H
  - Click on arrow button in order to synchronize the data to health cloud
  - Change to health cloud, now you should see the measurements as CareObservation objects in related list of your community patient! 
 
+## Read All About It
+
+- [Trailhead: XCode Essentials](https://trailhead.salesforce.com/en/content/learn/modules/xcode-essentials)
+- [Trailhead Project Mini-Hack: iOS and Salesforce Mobile SDK](https://trailhead.salesforce.com/en/content/learn/projects/mini-hack-mobile-sdk-ios)
+- [Trailhead: Swift Essentials](https://trailhead.salesforce.com/en/content/learn/modules/swift-essentials)
+- [Trailhead Modern Mobile Development for iOS](https://trailhead.salesforce.com/content/learn/modules/modern-mobile-development-ios?trail_id=start-ios-appdev)
