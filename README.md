@@ -4,10 +4,19 @@
 
 This app is a sample application that demonstrates how data collected by Apple HealthKit can be integrated into Mobile SDK app and forwared to Salesforce Health Cloud into Care Observation object.
 
-> IMPORTANT: This is the second part of the reqired setup, for required customizations of your HLS org please refer first to the following repository [here](https://github.com/ygavrylenko/healthkitdemo-sfdx.git).
+> IMPORTANT: This is the second part of the reqired setup, for required customizations of your HLS org please refer first to the following repository [Part 1](https://github.com/ygavrylenko/healthkitdemo-sfdx.git).
 
 <img src="images/HealthKitDemo-Measurements.png" height="250">
 <img src="images/HealthKitDemo-Authorize.png" height="250">
+
+## Prerequisites
+
+In order to experience, and experiment with this sample app you'll need:
+
+1. A working installation of Git.
+1. An Apple Computer with Xcode 11.7 (or possibly higher) installed.
+1. If you want to install the sample app on a physical iOS device, you'll need an Apple Developer Account.
+1. Information from the [Part 1](https://github.com/ygavrylenko/healthkitdemo-sfdx.git) --> Connected App Consumer Key, Community Endpoint and valid community user with assigned "HealthKitPatientPS" (see instructions in [Part 1](https://github.com/ygavrylenko/healthkitdemo-sfdx.git)).
 
 
 # Setup Process
@@ -43,7 +52,7 @@ This app is a sample application that demonstrates how data collected by Apple H
 
 <img src="images/bootconfig.png">
 
-5. Go to **/Supporting Files/Info.plist and add following entry (take the patient community endpoint from Part 1). Important: paste it without https// path:
+5. Go to **/Supporting Files/Info.plist and add following entry (take the patient community endpoint from Part 1). Important: paste it **without https//** path:
 
 > IMPORTANT: Check that your community active and you have to publish it once! 
 
@@ -52,15 +61,15 @@ This app is a sample application that demonstrates how data collected by Apple H
     ```
 
  6. Now that's where the rubber hits the road! 
- - Choose your emulator or your iPhone as a target (you have to specify develpment team if you use real iPhone)
+ - Choose your emulator or your physical device as a target --> If you want to install the sample app on a physical iOS device, you'll need an Apple Developer Account
  - Build the project, your demo application starts now
  - You should see communty log-in window, enter credentials of your communty patient (e.g. for Charles Green)
  - You have to authorize access to the Apple HealthKit if you start the app for the first time, please allow both type of measurements (Heart Rate and Weight)
  - You should also see some tasks for your patient on the first tab, retrieved from the org, if some exist (if not add some for demo purposes)
- - Before you start, close applicaton and enter some values in your HealthKit (you can do it manually)
- - Click on the tab in the middle, you should see the values from HealthKit
- - Click on arrow button in order to synchronize the data to health cloud
- - Change to health cloud, now you should see the measurements as CareObservation objects in related list of your community patient! 
+ - Before you start, close applicaton and enter some samples values in your HealthKit (you can do it manually) or check that you have measurements for Body Weight and Heart Rate.
+ - Click on the tab in the middle (with Heart Icon), you should see the values from HealthKit
+ - Click on arrow button in right upper corner in order to *synchronize* the data to health cloud
+ - Change to your health cloud instance, now you should see the measurements as CareObservation objects in related list of your community patient! 
 
 ## Read All About It
 
