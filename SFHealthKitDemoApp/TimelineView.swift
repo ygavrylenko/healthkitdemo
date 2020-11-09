@@ -13,18 +13,22 @@ struct TimelineView: View {
     
     var body: some View {
         NavigationView {
-            List(self.timelineModel.tasks, id: \.id) { task in
-                TimelineRow(type: "task", task: task)
+            ZStack{
+                List(self.timelineModel.tasks, id: \.id) { task in
+                        TimelineRow(type: "task", task: task)
+                        }
+                        //.listStyle(GroupedListStyle())
+                    .environment(\.horizontalSizeClass, .regular)
+                
+                    .navigationBarTitle(Text("Your next tasks").font(.title))
+                    
+                    .onAppear {
+                            print("On Appear firing for ExistingClaims()")
+                        self.timelineModel.fetchDataFromSalesforce()
+                        }
+                
                 }
-                //.listStyle(GroupedListStyle())
-                .environment(\.horizontalSizeClass, .regular)
-                .navigationBarTitle(Text("Your next tasks").font(.title))
-            .onAppear {
-                    print("On Appear firing for ExistingClaims()")
-                self.timelineModel.fetchDataFromSalesforce()
-                }
-        }
-
+            }
     }
 }
 

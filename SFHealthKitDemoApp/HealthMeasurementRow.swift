@@ -10,6 +10,7 @@ import SwiftUI
 
 struct HealthMeasurementRow: View {
     var measurement: HealthKitMeasurement
+    @Environment(\.colorScheme) var colorScheme
         
     var body: some View {
         VStack {
@@ -26,11 +27,13 @@ struct HealthMeasurementRow: View {
                         .bold()
                     Spacer()
                     Text(measurement.dateString)
+                        
                         .foregroundColor(Color.gray)
                 }
             }
         .padding()
-        .background(Color.white)
+        //.background(colorScheme == .dark ? Color.gray : Color(red: 242 / 255, green: 242 / 255, blue: 247 / 255))
+        //.background(Color.white)
     }
 }
 

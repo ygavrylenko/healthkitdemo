@@ -24,11 +24,12 @@ struct MainHKView: View {
     @EnvironmentObject var syncHKDataModel : SyncHKDataModel
     
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    @Environment(\.colorScheme) var colorScheme
         
     var body: some View {
+        
         NavigationView {
-            VStack{
-             
+            List{
                 NavigationLink(destination: HealthMeasurementsList(hkdata: healthDataModel.bodyMassData, dataTypeLabel: "Body Mass")) {
                     HealthDataTypeRow(kpiname: "Body Mass", measurement: healthDataModel.bodyMassData.last ?? HealthKitMeasurement(id: "1234567890", quantityString: "0.00", quantityDouble: 0.00, date: Date(), dateString: "16-07-2020", deviceName: "Unknown Device", type: "heabodyMass", icon: "Weight", unit: "lbs"))
                         .cornerRadius(20)
@@ -38,12 +39,10 @@ struct MainHKView: View {
                     HealthDataTypeRow(kpiname: "Heart Rate", measurement: healthDataModel.heartRateData.last ?? HealthKitMeasurement(id: "1234567890", quantityString: "0.00", quantityDouble: 0.00, date: Date(), dateString: "16-07-2020", deviceName: "Unknown Device", type: "heartRate", icon: "Heart", unit: "bpm"))
                         .cornerRadius(20)
                 }                
-                Spacer()
             }
-            .padding()
-            //.padding(.top, 10)
-            .background(Color(red: 242 / 255, green: 242 / 255, blue: 247 / 255))
-            //.edgesIgnoringSafeArea(.all)
+            .listStyle(GroupedListStyle())
+            .environment(\.horizontalSizeClass, .regular)
+            .padding(.top, 0)
             .navigationBarTitle("Your Health Data", displayMode: .inline)
             .navigationBarItems(trailing:
                 Button(action: {
@@ -79,9 +78,9 @@ struct MainHKView: View {
                   .onAppear { self.showProgress = false }
             )
         }
+            .edgesIgnoringSafeArea(.leading)
         .onAppear{
             self.healthDataModel.fetchData()
-
         }
     }
 }

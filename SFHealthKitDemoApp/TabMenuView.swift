@@ -22,7 +22,7 @@ struct TabMenuView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                Spacer()
+                //Spacer()
                 if self.viewRouter.currentView == "home" {
                     self.timelineView
                 } else if self.viewRouter.currentView == "settings" {
@@ -30,7 +30,7 @@ struct TabMenuView: View {
                 } else if self.viewRouter.currentView == "chat" {
                     self.chatView
                 }
-                Spacer()
+                //Spacer()
                 ZStack {
                     /*
                     if self.showPopUp {
@@ -42,7 +42,7 @@ struct TabMenuView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .padding(15)
-                            .frame(width: geometry.size.width/3, height: 75)
+                            .frame(width: geometry.size.width/3, height: 80)
                             .foregroundColor(self.viewRouter.currentView == "home" ? Color(red: 97 / 255, green: 164 / 255, blue: 103 / 255) : .gray)
                             .onTapGesture {
                                 self.viewRouter.currentView = "home"
@@ -51,7 +51,7 @@ struct TabMenuView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .padding(15)
-                            .frame(width: geometry.size.width/3, height: 75)
+                            .frame(width: geometry.size.width/3, height: 80)
                             .foregroundColor(self.viewRouter.currentView == "settings" ? Color(red: 97 / 255, green: 164 / 255, blue: 103 / 255) : .gray)
                             .onTapGesture {
                                 self.viewRouter.currentView = "settings"
@@ -60,14 +60,14 @@ struct TabMenuView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .padding(15)
-                            .frame(width: geometry.size.width/3, height: 75)
+                            .frame(width: geometry.size.width/3, height: 80)
                             .foregroundColor(self.viewRouter.currentView == "contact" ? Color(red: 97 / 255, green: 164 / 255, blue: 103 / 255) : .gray)
                             .onTapGesture {
                                 self.viewRouter.currentView = "chat"
                             }
                     }
                         .frame(width: geometry.size.width, height: geometry.size.height/10)
-                    .background(Color.white.shadow(radius: 2))
+                    .background(Color(UIColor.systemBackground).shadow(radius: 2))
                 }
             }.edgesIgnoringSafeArea(.bottom)
         }

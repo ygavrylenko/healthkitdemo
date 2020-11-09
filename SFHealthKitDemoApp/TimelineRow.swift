@@ -31,14 +31,14 @@ struct TimelineRow: View {
                             .font(.headline)
                             .foregroundColor(Color.gray)
                         Text(self.task!.activityDate)
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color.primary)
                             .bold()
                         Spacer()
                     }
                 }
         }
         //.padding()
-        .background(Color.white)
+        //.background(Color.white)
     }
 }
 

@@ -11,6 +11,7 @@ import SwiftUI
 struct HealthDataTypeRow: View {
     var kpiname: String //name of health measurement
     var measurement: HealthKitMeasurement
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
         VStack {
@@ -31,7 +32,7 @@ struct HealthDataTypeRow: View {
             HStack{
                 Text(self.measurement.quantityString)
                     .font(.title)
-                    .foregroundColor(Color.black)
+                    //.foregroundColor(Color.black)
                 Text(self.measurement.unit)
                     .foregroundColor(Color.gray)
                     .bold()
@@ -39,7 +40,7 @@ struct HealthDataTypeRow: View {
             }
         }
     .padding()
-    .background(Color.white)
+       // .background(colorScheme == .dark ? Color.secondary : Color(red: 242 / 255, green: 242 / 255, blue: 247 / 255))
     }
 }
 
