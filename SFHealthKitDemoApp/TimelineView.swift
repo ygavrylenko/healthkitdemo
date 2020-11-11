@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SalesforceSDKCore
 
 struct TimelineView: View {
 @ObservedObject var timelineModel = TimelineModel()
@@ -21,7 +22,10 @@ struct TimelineView: View {
                     .environment(\.horizontalSizeClass, .regular)
                 
                     .navigationBarTitle(Text("Your next tasks").font(.title))
-                    
+                    .navigationBarItems(
+                        leading: Button("Logout") {
+                            UserAccountManager.shared.logout()
+                        })                    
                     .onAppear {
                             print("On Appear firing for ExistingClaims()")
                         self.timelineModel.fetchDataFromSalesforce()

@@ -33,7 +33,7 @@
 	<key>NSHealthUpdateUsageDescription</key>
 	<string>Give me your health data! Now!</string>
 	<key>SFDCOAuthLoginHost</key>
-	<string>sdodemo-main-15b3ee89e40-15c-173725bdfc3.force.com</string>
+	<string>sdodemo-main-15b3ee89e40-15c-17569850c09.force.com/hcp</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

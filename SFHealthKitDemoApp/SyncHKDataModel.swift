@@ -58,6 +58,16 @@ class SyncHKDataModel: ObservableObject {
     
     func syncObservations() -> Future<Bool, Never>{
         compositeRequestBuilder = CompositeRequestBuilder().setAllOrNone(true)
+        
+        if ((weightMeasurements.count + heartMeasurements.count)>25){
+            let excess_count = weightMeasurements.count + heartMeasurements.count - 25
+            var minus_count = ceil(Double(excess_count / 2))
+            
+            for index in 1...Int(minus_count){
+                heartMeasurements.removeFirst()
+                weightMeasurements.removeFirst()
+            }
+        }
        
         return Future { promise in
             self.accountIdCancellable = self.fetchAccountId()

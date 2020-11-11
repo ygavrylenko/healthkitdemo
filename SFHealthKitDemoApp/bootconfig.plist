@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>remoteAccessConsumerKey</key>
-	<string>3MVG9JEx.BE6yifNhhSQ97O5hWWqvc3HbiEpQakw3e2ZeS3iBI1Dz4BmDwdoMi.v0UgW0cc2ZCO.Z1i1c9gYI</string>
+	<string>3MVG9SOw8KERNN09Yub4UhgNBhfVXbJMmZ.tF_Nbj_uv._KDD3g0Ao7Zt3At3BT81uqd01gVbGVaMk6IZe9t7</string>
 	<key>oauthRedirectURI</key>
 	<string>patientapp://auth/success</string>
 	<key>oauthScopes</key>

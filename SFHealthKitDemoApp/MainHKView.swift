@@ -9,6 +9,7 @@
 import SwiftUI
 import HealthKit
 import Combine
+import SalesforceSDKCore
 
 struct MainHKView: View {
     @State private var isAnimating = false
@@ -30,21 +31,24 @@ struct MainHKView: View {
         
         NavigationView {
             List{
-                NavigationLink(destination: HealthMeasurementsList(hkdata: healthDataModel.bodyMassData, dataTypeLabel: "Body Mass")) {
-                    HealthDataTypeRow(kpiname: "Body Mass", measurement: healthDataModel.bodyMassData.last ?? HealthKitMeasurement(id: "1234567890", quantityString: "0.00", quantityDouble: 0.00, date: Date(), dateString: "16-07-2020", deviceName: "Unknown Device", type: "heabodyMass", icon: "Weight", unit: "lbs"))
-                        .cornerRadius(20)
+                Section {
+                    NavigationLink(destination: HealthMeasurementsList(hkdata: healthDataModel.bodyMassData, dataTypeLabel: "Body Mass")) {
+                        HealthDataTypeRow(kpiname: "Body Mass", measurement: healthDataModel.bodyMassData.last ?? HealthKitMeasurement(id: "1234567890", quantityString: "0.00", quantityDouble: 0.00, date: Date(), dateString: "16-07-2020", deviceName: "Unknown Device", type: "heabodyMass", icon: "Weight", unit: "lbs"))
+                           
+                    }
+                    
+                    NavigationLink(destination: HealthMeasurementsList(hkdata: healthDataModel.heartRateData, dataTypeLabel: "Heart Rate")) {
+                        HealthDataTypeRow(kpiname: "Heart Rate", measurement: healthDataModel.heartRateData.last ?? HealthKitMeasurement(id: "1234567890", quantityString: "0.00", quantityDouble: 0.00, date: Date(), dateString: "16-07-2020", deviceName: "Unknown Device", type: "heartRate", icon: "Heart", unit: "bpm"))
+                            
+                    }
                 }
-                
-                NavigationLink(destination: HealthMeasurementsList(hkdata: healthDataModel.heartRateData, dataTypeLabel: "Heart Rate")) {
-                    HealthDataTypeRow(kpiname: "Heart Rate", measurement: healthDataModel.heartRateData.last ?? HealthKitMeasurement(id: "1234567890", quantityString: "0.00", quantityDouble: 0.00, date: Date(), dateString: "16-07-2020", deviceName: "Unknown Device", type: "heartRate", icon: "Heart", unit: "bpm"))
-                        .cornerRadius(20)
-                }                
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
             .padding(.top, 0)
             .navigationBarTitle("Your Health Data", displayMode: .inline)
-            .navigationBarItems(trailing:
+            .navigationBarItems(
+                trailing:
                 Button(action: {
                     self.showProgress.toggle()
                     self.syncHKDataModel.setWeightMeasurementsFromHK(measurements: self.healthDataModel.getBodyMassData())
@@ -78,7 +82,7 @@ struct MainHKView: View {
                   .onAppear { self.showProgress = false }
             )
         }
-            .edgesIgnoringSafeArea(.leading)
+        .edgesIgnoringSafeArea(.leading)
         .onAppear{
             self.healthDataModel.fetchData()
         }
