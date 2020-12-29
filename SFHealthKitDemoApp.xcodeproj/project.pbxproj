@@ -563,7 +563,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "-DSIGNPOST_ENABLED";
-				PRODUCT_BUNDLE_IDENTIFIER = com.salesforce.ios.MyDocMorris;
+				PRODUCT_BUNDLE_IDENTIFIER = com.salesforce.ios.SFHealthKitDemo;
 				PRODUCT_NAME = "SF HealthKit";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SFHealthKitDemoApp/Bridging-Header.h";
@@ -587,7 +587,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.salesforce.ios.MyDocMorris;
+				PRODUCT_BUNDLE_IDENTIFIER = com.salesforce.ios.SFHealthKitDemo;
 				PRODUCT_NAME = "SF HealthKit";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SFHealthKitDemoApp/Bridging-Header.h";
