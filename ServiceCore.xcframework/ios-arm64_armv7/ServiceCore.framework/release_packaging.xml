@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<copy-frameworks name="ServiceCore">
+   <framework name="ServiceCommon" copy-public="true"/>
+
+   <localizable-strings>
+       <localizable-string path="../../ServiceCommon/ServiceCommon/Resources/Localization" name="ServiceCommon.strings"/>
+   </localizable-strings>
+</copy-frameworks>

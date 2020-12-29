@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<copy-frameworks name="ServiceKnowledge">
+    <framework name="KnowledgeCore" copy-public="true"/>
+    <framework name="KnowledgeUI" copy-public="true"/>
+
+    <omit-resources>
+        <omit-resource path="MockResponses"/>
+    </omit-resources>
+
+    <localizable-strings>
+        <localizable-string path="../../KnowledgeUI/Resources/Localization" name="KnowledgeUI.strings"/>
+    </localizable-strings>
+</copy-frameworks>

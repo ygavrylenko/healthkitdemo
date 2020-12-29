@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<copy-frameworks name="ServiceChat">
+   <framework name="ChatCore" copy-public="true"/>
+   <framework name="ChatUI" copy-public="true"/>
+
+    <localizable-strings>
+        <localizable-string path="../../ChatUI/ChatUI/Resources/Localization" name="ChatUI.strings"/>
+    </localizable-strings>
+</copy-frameworks>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<copy-frameworks name="ServiceCases">
+    <framework name="CaseCore" copy-public="true"/>
+    <framework name="CaseUI" copy-public="true"/>
+
+    <omit-resources>
+        <omit-resource path="MockResponses"/>
+    </omit-resources>
+
+    <localizable-strings>
+        <localizable-string path="../../CaseUI/Resources/Localization" name="CaseUI.strings"/>
+    </localizable-strings>
+</copy-frameworks>

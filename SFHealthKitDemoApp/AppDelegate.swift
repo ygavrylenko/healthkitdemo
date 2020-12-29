@@ -33,6 +33,7 @@ class AppDelegate : UIResponder, UIApplicationDelegate {
     override init() {
         super.init()
         MobileSyncSDKManager.initializeSDK()
+        SnapinsConfig.instance.initialize()
     }
     
     // MARK: UISceneSession Lifecycle

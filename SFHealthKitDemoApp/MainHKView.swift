@@ -32,14 +32,26 @@ struct MainHKView: View {
         NavigationView {
             List{
                 Section {
+                    NavigationLink(destination: HealthCorrelationMeasurementList(hkdata: healthDataModel.bloodPressureData, dataTypeLabel: "Blood Pressure")) {
+                        HealthDataCorrelationTypeRow(kpiname: "Blood Pressure",
+                                                     correlationMeasurement: healthDataModel.bloodPressureData.last ?? HealthKitCorrelationMeasurement(
+                                                        id: "1234567890",
+                                                        type: "bloodPressure",
+                                                        icon: "BloodPressure",
+                                                        unit: "mmHg",
+                                                        date: Date(),
+                                                        dateString: "28-12-2020",
+                                                        measurement1: HealthKitMeasurement(id: "1234567890", quantityString: "120", quantityDouble: 120.0, date: Date(), dateString: "28-12-2020", deviceName: "BloodPressureDevice", type: "systolicBloodPressure", icon: "Heart", unit: "mmHg"),
+                                                        measurement2: HealthKitMeasurement(id: "1234567890", quantityString: "80", quantityDouble: 80.0, date: Date(), dateString: "28-12-2020", deviceName: "BloodPressureDevice", type: "diastolicBloodPressure", icon: "Heart", unit: "mmHg")
+                                                    ))
+                    }
+                    
                     NavigationLink(destination: HealthMeasurementsList(hkdata: healthDataModel.bodyMassData, dataTypeLabel: "Body Mass")) {
                         HealthDataTypeRow(kpiname: "Body Mass", measurement: healthDataModel.bodyMassData.last ?? HealthKitMeasurement(id: "1234567890", quantityString: "0.00", quantityDouble: 0.00, date: Date(), dateString: "16-07-2020", deviceName: "Unknown Device", type: "heabodyMass", icon: "Weight", unit: "lbs"))
-                           
                     }
                     
                     NavigationLink(destination: HealthMeasurementsList(hkdata: healthDataModel.heartRateData, dataTypeLabel: "Heart Rate")) {
                         HealthDataTypeRow(kpiname: "Heart Rate", measurement: healthDataModel.heartRateData.last ?? HealthKitMeasurement(id: "1234567890", quantityString: "0.00", quantityDouble: 0.00, date: Date(), dateString: "16-07-2020", deviceName: "Unknown Device", type: "heartRate", icon: "Heart", unit: "bpm"))
-                            
                     }
                 }
             }
@@ -53,11 +65,10 @@ struct MainHKView: View {
                     self.showProgress.toggle()
                     self.syncHKDataModel.setWeightMeasurementsFromHK(measurements: self.healthDataModel.getBodyMassData())
                     self.syncHKDataModel.setHeartRateMeasurementsFromHK(measurements: self.healthDataModel.getHeartRateData())
+                    self.syncHKDataModel.setSystolicBloodPressureFromHK(measurements: self.healthDataModel.getSystolicBloodPressureData())
+                    self.syncHKDataModel.setDiastolicBloodPressureFromHK(measurements: self.healthDataModel.getDiastolicBloodPressureData())
                     print("Submitting")
-                    self.uploadComplete = self.syncHKDataModel.syncObservations()
-                      .sink { _ in
-                        self.mode.wrappedValue.dismiss()
-                    }
+                    self.syncHKDataModel.syncObservations()
                     let seconds = 3.0
                     DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                         self.showProgress.toggle()

@@ -26,14 +26,11 @@ struct HealthMeasurementRow: View {
                         .foregroundColor(Color.gray)
                         .bold()
                     Spacer()
-                    Text(measurement.dateString)
-                        
+                    Text(measurement.dateString)                        
                         .foregroundColor(Color.gray)
                 }
             }
         .padding()
-        //.background(colorScheme == .dark ? Color.gray : Color(red: 242 / 255, green: 242 / 255, blue: 247 / 255))
-        //.background(Color.white)
     }
 }
 

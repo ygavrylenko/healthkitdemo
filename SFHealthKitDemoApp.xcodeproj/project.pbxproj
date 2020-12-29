@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,14 +28,19 @@
 		E556DF8624B4B7F0005D0DDF /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E556DF8524B4B7F0005D0DDF /* ViewRouter.swift */; };
 		E556DF8824B4B9E1005D0DDF /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E556DF8724B4B9E1005D0DDF /* HealthKit.framework */; };
 		E556DF9024B4C515005D0DDF /* UserHealthProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E556DF8F24B4C515005D0DDF /* UserHealthProfile.swift */; };
-		E5810061254722D2005A2696 /* ContentMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5810060254722D2005A2696 /* ContentMessageView.swift */; };
-		E58100632547238B005A2696 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58100622547238B005A2696 /* MessageView.swift */; };
-		E5810066254724A7005A2696 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5810065254724A7005A2696 /* Message.swift */; };
-		E5810068254724C6005A2696 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5810067254724C6005A2696 /* User.swift */; };
-		E581006A254725C5005A2696 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5810069254725C5005A2696 /* ChatView.swift */; };
-		E581006D25472614005A2696 /* ChatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E581006C25472614005A2696 /* ChatHelper.swift */; };
-		E581006F25472628005A2696 /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E581006E25472628005A2696 /* KeyboardResponder.swift */; };
-		E58100712547263E005A2696 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58100702547263E005A2696 /* ViewExtension.swift */; };
+		E59F49132591F9EF000FE877 /* ServiceChat.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E59F49072591F9A5000FE877 /* ServiceChat.xcframework */; };
+		E59F49142591F9EF000FE877 /* ServiceChat.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E59F49072591F9A5000FE877 /* ServiceChat.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E59F49152591F9F0000FE877 /* ServiceCore.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = E59F49082591F9A6000FE877 /* ServiceCore.xcframework */; };
+		E59F49162591F9F0000FE877 /* ServiceCore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E59F49082591F9A6000FE877 /* ServiceCore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E59F491C2591FB32000FE877 /* ServiceChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59F491B2591FB32000FE877 /* ServiceChat.swift */; };
+		E59F498425935F07000FE877 /* SnapinsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59F498325935F06000FE877 /* SnapinsConstants.swift */; };
+		E59F498925935FCE000FE877 /* SnapinsConfig+ActionManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59F498525935FCE000FE877 /* SnapinsConfig+ActionManagerDelegate.swift */; };
+		E59F498A25935FCE000FE877 /* SnapinsConfig+SOSDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59F498625935FCE000FE877 /* SnapinsConfig+SOSDelegate.swift */; };
+		E59F498B25935FCE000FE877 /* SnapinsConfig+ChatDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59F498725935FCE000FE877 /* SnapinsConfig+ChatDelegate.swift */; };
+		E59F498C25935FCE000FE877 /* SnapinsConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59F498825935FCE000FE877 /* SnapinsConfig.swift */; };
+		E59F498E259A5EF2000FE877 /* HealthCorrelationMeasurementRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59F498D259A5EF2000FE877 /* HealthCorrelationMeasurementRow.swift */; };
+		E59F4990259A6B18000FE877 /* HealthCorrelationMeasurementList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59F498F259A6B18000FE877 /* HealthCorrelationMeasurementList.swift */; };
+		E59F4992259A6F4D000FE877 /* HealthDataCorrelationTypeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E59F4991259A6F4D000FE877 /* HealthDataCorrelationTypeRow.swift */; };
 		E5A2A9F424C02DEE00DB959A /* HealthDataTypeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A2A9F324C02DEE00DB959A /* HealthDataTypeRow.swift */; };
 		E5A2A9F924C03FA700DB959A /* MainHKView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A2A9F824C03FA700DB959A /* MainHKView.swift */; };
 		E5A2A9FB24C04E7500DB959A /* HealthDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A2A9FA24C04E7500DB959A /* HealthDataModel.swift */; };
@@ -46,6 +51,21 @@
 		E5A2AA0924C1B97600DB959A /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A2AA0824C1B97600DB959A /* UIImageExtensions.swift */; };
 		E5BEA201254A057C00056384 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5BEA200254A057C00056384 /* Images.xcassets */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E59F49122591F9ED000FE877 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E59F49162591F9F0000FE877 /* ServiceCore.xcframework in Embed Frameworks */,
+				E59F49142591F9EF000FE877 /* ServiceChat.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		45548CCBD204A8C159977B91 /* Pods-SFHealthKitDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SFHealthKitDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-SFHealthKitDemoApp/Pods-SFHealthKitDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -72,14 +92,20 @@
 		E556DF8524B4B7F0005D0DDF /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		E556DF8724B4B9E1005D0DDF /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		E556DF8F24B4C515005D0DDF /* UserHealthProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHealthProfile.swift; sourceTree = "<group>"; };
-		E5810060254722D2005A2696 /* ContentMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMessageView.swift; sourceTree = "<group>"; };
-		E58100622547238B005A2696 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
-		E5810065254724A7005A2696 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		E5810067254724C6005A2696 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		E5810069254725C5005A2696 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
-		E581006C25472614005A2696 /* ChatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatHelper.swift; sourceTree = "<group>"; };
-		E581006E25472628005A2696 /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
-		E58100702547263E005A2696 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		E59F49052591F9A0000FE877 /* ServiceCases.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ServiceCases.xcframework; sourceTree = "<group>"; };
+		E59F49062591F9A4000FE877 /* ServiceSOS.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ServiceSOS.xcframework; sourceTree = "<group>"; };
+		E59F49072591F9A5000FE877 /* ServiceChat.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ServiceChat.xcframework; sourceTree = "<group>"; };
+		E59F49082591F9A6000FE877 /* ServiceCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ServiceCore.xcframework; sourceTree = "<group>"; };
+		E59F49092591F9A7000FE877 /* ServiceKnowledge.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = ServiceKnowledge.xcframework; sourceTree = "<group>"; };
+		E59F491B2591FB32000FE877 /* ServiceChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceChat.swift; sourceTree = "<group>"; };
+		E59F498325935F06000FE877 /* SnapinsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapinsConstants.swift; sourceTree = "<group>"; };
+		E59F498525935FCE000FE877 /* SnapinsConfig+ActionManagerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SnapinsConfig+ActionManagerDelegate.swift"; sourceTree = "<group>"; };
+		E59F498625935FCE000FE877 /* SnapinsConfig+SOSDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SnapinsConfig+SOSDelegate.swift"; sourceTree = "<group>"; };
+		E59F498725935FCE000FE877 /* SnapinsConfig+ChatDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SnapinsConfig+ChatDelegate.swift"; sourceTree = "<group>"; };
+		E59F498825935FCE000FE877 /* SnapinsConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapinsConfig.swift; sourceTree = "<group>"; };
+		E59F498D259A5EF2000FE877 /* HealthCorrelationMeasurementRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCorrelationMeasurementRow.swift; sourceTree = "<group>"; };
+		E59F498F259A6B18000FE877 /* HealthCorrelationMeasurementList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthCorrelationMeasurementList.swift; sourceTree = "<group>"; };
+		E59F4991259A6F4D000FE877 /* HealthDataCorrelationTypeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataCorrelationTypeRow.swift; sourceTree = "<group>"; };
 		E5A2A9F324C02DEE00DB959A /* HealthDataTypeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataTypeRow.swift; sourceTree = "<group>"; };
 		E5A2A9F824C03FA700DB959A /* MainHKView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHKView.swift; sourceTree = "<group>"; };
 		E5A2A9FA24C04E7500DB959A /* HealthDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthDataModel.swift; sourceTree = "<group>"; };
@@ -100,6 +126,8 @@
 			files = (
 				E556DF8824B4B9E1005D0DDF /* HealthKit.framework in Frameworks */,
 				15FDC5F925573FFA936EC92C /* Pods_SFHealthKitDemoApp.framework in Frameworks */,
+				E59F49132591F9EF000FE877 /* ServiceChat.xcframework in Frameworks */,
+				E59F49152591F9F0000FE877 /* ServiceCore.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +137,7 @@
 		4F13E944237DD626005BCAE9 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				E581005F254722C1005A2696 /* ChatViews */,
+				E581005F254722C1005A2696 /* ServiceSnapins */,
 				B73B520C234FA65F001B069B /* SceneDelegate.swift */,
 				E556DF8324B4B76B005D0DDF /* TabMenuView.swift */,
 				E556DF8524B4B7F0005D0DDF /* ViewRouter.swift */,
@@ -120,6 +148,9 @@
 				E53DF63124D06DA400117F79 /* MainProfileView.swift */,
 				E53DF63324D1710E00117F79 /* TimelineRow.swift */,
 				E52C652424F7906C0060F77B /* TimelineView.swift */,
+				E59F498D259A5EF2000FE877 /* HealthCorrelationMeasurementRow.swift */,
+				E59F498F259A6B18000FE877 /* HealthCorrelationMeasurementList.swift */,
+				E59F4991259A6F4D000FE877 /* HealthDataCorrelationTypeRow.swift */,
 			);
 			name = SwiftUI;
 			sourceTree = "<group>";
@@ -127,7 +158,6 @@
 		4F13E945237DD62D005BCAE9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E58100642547249A005A2696 /* ChatModels */,
 				4F13E946237DD72E005BCAE9 /* AccountsListModel.swift */,
 				4F13E937237DD5D9005BCAE9 /* ContactsForAccountModel.swift */,
 				4F13E93A237DD5D9005BCAE9 /* ContactDetailModel.swift */,
@@ -185,7 +215,6 @@
 		4FD6C4A11B755265002F9F90 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E581006B254725FB005A2696 /* Helper */,
 				E5A2AA0524C1B8EC00DB959A /* Extensions */,
 				4F13E944237DD626005BCAE9 /* SwiftUI */,
 				4F13E945237DD62D005BCAE9 /* Models */,
@@ -199,6 +228,11 @@
 		6B868AEB1ACA7FCA4636C7F7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E59F49052591F9A0000FE877 /* ServiceCases.xcframework */,
+				E59F49072591F9A5000FE877 /* ServiceChat.xcframework */,
+				E59F49082591F9A6000FE877 /* ServiceCore.xcframework */,
+				E59F49092591F9A7000FE877 /* ServiceKnowledge.xcframework */,
+				E59F49062591F9A4000FE877 /* ServiceSOS.xcframework */,
 				E556DF8724B4B9E1005D0DDF /* HealthKit.framework */,
 				F6ACA68403AC6C9D35D53E55 /* Pods_SFHealthKitDemoApp.framework */,
 			);
@@ -214,33 +248,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		E581005F254722C1005A2696 /* ChatViews */ = {
+		E581005F254722C1005A2696 /* ServiceSnapins */ = {
 			isa = PBXGroup;
 			children = (
-				E5810060254722D2005A2696 /* ContentMessageView.swift */,
-				E58100622547238B005A2696 /* MessageView.swift */,
-				E5810069254725C5005A2696 /* ChatView.swift */,
+				E59F498825935FCE000FE877 /* SnapinsConfig.swift */,
+				E59F498525935FCE000FE877 /* SnapinsConfig+ActionManagerDelegate.swift */,
+				E59F498725935FCE000FE877 /* SnapinsConfig+ChatDelegate.swift */,
+				E59F498625935FCE000FE877 /* SnapinsConfig+SOSDelegate.swift */,
+				E59F491B2591FB32000FE877 /* ServiceChat.swift */,
+				E59F498325935F06000FE877 /* SnapinsConstants.swift */,
 			);
-			path = ChatViews;
-			sourceTree = "<group>";
-		};
-		E58100642547249A005A2696 /* ChatModels */ = {
-			isa = PBXGroup;
-			children = (
-				E5810065254724A7005A2696 /* Message.swift */,
-				E5810067254724C6005A2696 /* User.swift */,
-			);
-			path = ChatModels;
-			sourceTree = "<group>";
-		};
-		E581006B254725FB005A2696 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				E581006C25472614005A2696 /* ChatHelper.swift */,
-				E581006E25472628005A2696 /* KeyboardResponder.swift */,
-				E58100702547263E005A2696 /* ViewExtension.swift */,
-			);
-			path = Helper;
+			path = ServiceSnapins;
 			sourceTree = "<group>";
 		};
 		E5A2A9F524C0335600DB959A /* Resources */ = {
@@ -271,6 +289,7 @@
 				4FD6C4711B754AF1002F9F90 /* Frameworks */,
 				4FD6C4721B754AF1002F9F90 /* Resources */,
 				C92F76751AF32A8B26136E46 /* [CP] Embed Pods Frameworks */,
+				E59F49122591F9ED000FE877 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -384,18 +403,21 @@
 			files = (
 				E556DF9024B4C515005D0DDF /* UserHealthProfile.swift in Sources */,
 				B73B520D234FA65F001B069B /* SceneDelegate.swift in Sources */,
+				E59F498B25935FCE000FE877 /* SnapinsConfig+ChatDelegate.swift in Sources */,
 				E5A2A9F424C02DEE00DB959A /* HealthDataTypeRow.swift in Sources */,
+				E59F498C25935FCE000FE877 /* SnapinsConfig.swift in Sources */,
 				E5A2A9FD24C0987B00DB959A /* HealthMeasurementRow.swift in Sources */,
-				E581006A254725C5005A2696 /* ChatView.swift in Sources */,
 				4FD6C47A1B754AF1002F9F90 /* AppDelegate.swift in Sources */,
-				E5810068254724C6005A2696 /* User.swift in Sources */,
+				E59F4990259A6B18000FE877 /* HealthCorrelationMeasurementList.swift in Sources */,
+				E59F498925935FCE000FE877 /* SnapinsConfig+ActionManagerDelegate.swift in Sources */,
+				E59F498A25935FCE000FE877 /* SnapinsConfig+SOSDelegate.swift in Sources */,
 				E556DF8624B4B7F0005D0DDF /* ViewRouter.swift in Sources */,
 				E5A2A9FB24C04E7500DB959A /* HealthDataModel.swift in Sources */,
 				4F13E947237DD72E005BCAE9 /* AccountsListModel.swift in Sources */,
+				E59F4992259A6F4D000FE877 /* HealthDataCorrelationTypeRow.swift in Sources */,
+				E59F498E259A5EF2000FE877 /* HealthCorrelationMeasurementRow.swift in Sources */,
 				E53DF63424D1710E00117F79 /* TimelineRow.swift in Sources */,
-				E5810066254724A7005A2696 /* Message.swift in Sources */,
 				E53DF63224D06DA500117F79 /* MainProfileView.swift in Sources */,
-				E581006D25472614005A2696 /* ChatHelper.swift in Sources */,
 				E5A2AA0924C1B97600DB959A /* UIImageExtensions.swift in Sources */,
 				E52C651F24F680CE0060F77B /* Task.swift in Sources */,
 				E5A2A9FF24C1953100DB959A /* HealthMeasurementsList.swift in Sources */,
@@ -403,14 +425,12 @@
 				E53DF63624D1713700117F79 /* TimelineModel.swift in Sources */,
 				4F13E93C237DD5D9005BCAE9 /* ContactsForAccountModel.swift in Sources */,
 				4F13E93F237DD5D9005BCAE9 /* ContactDetailModel.swift in Sources */,
-				E58100632547238B005A2696 /* MessageView.swift in Sources */,
-				E5810061254722D2005A2696 /* ContentMessageView.swift in Sources */,
-				E581006F25472628005A2696 /* KeyboardResponder.swift in Sources */,
 				E556DF8424B4B76B005D0DDF /* TabMenuView.swift in Sources */,
-				E58100712547263E005A2696 /* ViewExtension.swift in Sources */,
 				4F393A291C3C8BCD00B3EA13 /* main.swift in Sources */,
 				E5A2A9F924C03FA700DB959A /* MainHKView.swift in Sources */,
+				E59F498425935F07000FE877 /* SnapinsConstants.swift in Sources */,
 				4FD6C4A01B755242002F9F90 /* InitialViewController.swift in Sources */,
+				E59F491C2591FB32000FE877 /* ServiceChat.swift in Sources */,
 				E5A2AA0424C1B5E800DB959A /* SyncHKDataModel.swift in Sources */,
 				E52C652524F7906C0060F77B /* TimelineView.swift in Sources */,
 			);
@@ -543,7 +563,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "-DSIGNPOST_ENABLED";
-				PRODUCT_BUNDLE_IDENTIFIER = com.salesforce.ios.SFHealthKitDemoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.salesforce.ios.MyDocMorris;
 				PRODUCT_NAME = "SF HealthKit";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SFHealthKitDemoApp/Bridging-Header.h";
@@ -567,7 +587,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.salesforce.ios.SFHealthKitDemoApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.salesforce.ios.MyDocMorris;
 				PRODUCT_NAME = "SF HealthKit";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "SFHealthKitDemoApp/Bridging-Header.h";

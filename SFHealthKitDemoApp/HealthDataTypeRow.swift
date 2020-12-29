@@ -40,7 +40,6 @@ struct HealthDataTypeRow: View {
             }
         }
     .padding()
-       // .background(colorScheme == .dark ? Color.secondary : Color(red: 242 / 255, green: 242 / 255, blue: 247 / 255))
     }
 }
 

@@ -13,10 +13,13 @@ class SyncHKDataModel: ObservableObject {
     let newSync = PassthroughSubject<SyncHKDataModel, Never>()
     let completedPublisher = PassthroughSubject<Bool, Never>()
     
-    private var compositeRequestBuilder = CompositeRequestBuilder().setAllOrNone(false)
+    //private var compositeRequestBuilder = CompositeRequestBuilder().setAllOrNone(false)
     
+    var requests: [RestRequest] = []
     var weightMeasurements: [HealthKitMeasurement] = []
     var heartMeasurements: [HealthKitMeasurement] = []
+    var systolicBloodPressure: [HealthKitMeasurement] = []
+    var diastolicBloodPressure: [HealthKitMeasurement] = []
     
     @Published var accountId = "" {
       didSet {
@@ -38,6 +41,14 @@ class SyncHKDataModel: ObservableObject {
         self.heartMeasurements = measurements
     }
     
+    func setSystolicBloodPressureFromHK(measurements: [HealthKitMeasurement]){
+        self.systolicBloodPressure = measurements
+    }
+    
+    func setDiastolicBloodPressureFromHK(measurements: [HealthKitMeasurement]){
+        self.diastolicBloodPressure = measurements
+    }
+    
     func fetchAccountId() -> AnyPublisher<String, Never> {
       let userId = UserAccountManager.shared.currentUserAccount!.accountIdentity.userId
       let accountIdQuery = RestClient.shared.request(forQuery: "SELECT contact.accountId FROM User WHERE ID = '\(userId)' LIMIT 1",
@@ -56,28 +67,39 @@ class SyncHKDataModel: ObservableObject {
       }.eraseToAnyPublisher()
     }
     
-    func syncObservations() -> Future<Bool, Never>{
-        compositeRequestBuilder = CompositeRequestBuilder().setAllOrNone(true)
+    func syncObservations(){
+        self.requests = []
         
-        if ((weightMeasurements.count + heartMeasurements.count)>25){
-            let excess_count = weightMeasurements.count + heartMeasurements.count - 25
-            var minus_count = ceil(Double(excess_count / 2))
-            
-            for index in 1...Int(minus_count){
-                heartMeasurements.removeFirst()
-                weightMeasurements.removeFirst()
-            }
-        }
-       
-        return Future { promise in
-            self.accountIdCancellable = self.fetchAccountId()
-                .receive(on: RunLoop.main)
-                .map({$0})
-                .sink { accountId in
-                    print("Uploading to Salesforce: fetched accountId: ", accountId)
-                    self.createObservationEventsRequests(accountIdString: accountId)
+        self.accountIdCancellable = self.fetchAccountId()
+            .receive(on: RunLoop.main)
+            .map({$0})
+            .sink {accountId in
+                print("Uploading to Salesforce: fetched accountId: ", accountId)
+                
+                self.createObservationEventsRequests(accountIdString: accountId)
+                
+                let maxNumberOfSubrequests = 25 //see specification of Composite API (maybe there is a more elegant way the fetch this information?)
+                
+                //now we separate all requests in chunks of 25 subrequests needed to build composite request
+                let chunks = stride(from: 0, to: self.requests.count, by: maxNumberOfSubrequests).map {
+                    Array(self.requests[$0..<min($0 + maxNumberOfSubrequests, self.requests.count)])
+                }
+                
+                for index in 0...Int(chunks.count - 1){
+                    let compositeRequestBuilder = CompositeRequestBuilder().setAllOrNone(true)
                     
-                    let compositeRequest = self.compositeRequestBuilder.buildCompositeRequest("v49.0")
+                    let tempRequests: [RestRequest] = chunks[index]
+                    tempRequests.enumerated().forEach { (index, measurement) -> Void in
+                        compositeRequestBuilder.add(measurement, referenceId: "hkevents\(index)")
+                      }
+                    self.createCompositeRequestPromise(compositeRequest: compositeRequestBuilder.buildCompositeRequest("v49.0"))
+                }
+            }
+        
+    }
+    
+    func createCompositeRequestPromise(compositeRequest: CompositeRequest) -> Future<Bool, Never>{
+        return Future { promise in
                     self.syncTaskCancellable = RestClient.shared.publisher(for: compositeRequest)
                         .receive(on: RunLoop.main)
                         .mapError { dump($0) }
@@ -89,7 +111,6 @@ class SyncHKDataModel: ObservableObject {
                             promise(.success(true))
                             self.showActivityIndicator = false;
                         }
-                }
         }
     }
     
@@ -111,8 +132,7 @@ class SyncHKDataModel: ObservableObject {
             record["UOM__c"] = "lbs"
 
             let observationRequest = RestClient.shared.requestForCreate(withObjectType: "Observation_Event__e", fields: record, apiVersion: "v49.0")
-            
-            compositeRequestBuilder.add(observationRequest, referenceId: "weightnevents\(index)")
+            requests.append(observationRequest)
           }
         
         self.heartMeasurements.enumerated().forEach { (index, measurement) -> Void in
@@ -126,8 +146,37 @@ class SyncHKDataModel: ObservableObject {
             record["UOM__c"] = "bpm"
 
             let observationRequest = RestClient.shared.requestForCreate(withObjectType: "Observation_Event__e", fields: record, apiVersion: "v49.0")
-            
-            compositeRequestBuilder.add(observationRequest, referenceId: "heartevents\(index)")
+            requests.append(observationRequest)
+          }
+        
+        
+        self.systolicBloodPressure.enumerated().forEach { (index, measurement) -> Void in
+            var record = RestClient.SalesforceRecord()
+            record["Id__c"] = measurement.id
+            record["ObservationName__c"] = "AppleHK Systolic Blood Pressure Measurement"
+            record["ObservedSubjectId__c"] = accountIdString
+            record["ObservationValue__c"] = String(format: "%.2f", measurement.quantityDouble)
+            record["ObservationDate__c"] = customFormatter.string(from: measurement.date)
+            record["CodeSet_Id__c"] = "healthkit-systolic"
+            record["UOM__c"] = "mmHg"
+
+            let observationRequest = RestClient.shared.requestForCreate(withObjectType: "Observation_Event__e", fields: record, apiVersion: "v49.0")
+            requests.append(observationRequest)
+          }
+        
+        
+        self.diastolicBloodPressure.enumerated().forEach { (index, measurement) -> Void in
+            var record = RestClient.SalesforceRecord()
+            record["Id__c"] = measurement.id
+            record["ObservationName__c"] = "AppleHK Diastolic Blood Pressure Measurement"
+            record["ObservedSubjectId__c"] = accountIdString
+            record["ObservationValue__c"] = String(format: "%.2f", measurement.quantityDouble)
+            record["ObservationDate__c"] = customFormatter.string(from: measurement.date)
+            record["CodeSet_Id__c"] = "healthkit-systolic"
+            record["UOM__c"] = "mmHg"
+
+            let observationRequest = RestClient.shared.requestForCreate(withObjectType: "Observation_Event__e", fields: record, apiVersion: "v49.0")
+            requests.append(observationRequest)
           }
     }
     

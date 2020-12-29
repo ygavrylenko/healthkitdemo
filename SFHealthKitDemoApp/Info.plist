@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>$(PRODUCT_NAME)</string>
+	<string>MyDocMorris</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIcons</key>
@@ -33,7 +33,7 @@
 	<key>NSHealthUpdateUsageDescription</key>
 	<string>Give me your health data! Now!</string>
 	<key>SFDCOAuthLoginHost</key>
-	<string>sdodemo-main-15b3ee89e40-15c-17569850c09.force.com/hcp</string>
+	<string>sdodemo-main-15b3ee89e40-15c-17569850c09.force.com/docm</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -61,6 +61,10 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>Used when sending an image to a doctor.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Used when sending an image to a doctor.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
